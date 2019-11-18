@@ -1,0 +1,113 @@
+﻿@model IEnumerable<VMANpizza.Models.ViewModel.OrderPizza>
+
+@{
+    ViewData["Title"] = "ConfirmOrder";
+}
+
+<h1>ConfirmOrder</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.QtySbac)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.QtyMbac)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.QtyLbac)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.QtySsal)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.QtyMsal)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.QtyLsal)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.QtySpep)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.QtyMpep)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.QtyLpep)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.QtySmus)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.QtyMmus)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.QtyLmus)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.customerId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.orderId)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.QtySbac)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.QtyMbac)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.QtyLbac)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.QtySsal)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.QtyMsal)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.QtyLsal)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.QtySpep)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.QtyMpep)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.QtyLpep)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.QtySmus)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.QtyMmus)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.QtyLmus)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.customerId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.orderId)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
