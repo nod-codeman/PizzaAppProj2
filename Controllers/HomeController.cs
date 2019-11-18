@@ -9,6 +9,8 @@ using VMANpizza.Models;
 
 namespace VMANpizza.Controllers
 {
+
+    //test comment
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
