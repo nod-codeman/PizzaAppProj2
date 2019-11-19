@@ -66,10 +66,10 @@
                 <div class="col">
                     <a @*asp-action="" asp-controller=""*@>
                         <div class="box-img">
-                            <img src="~/Images/Bronx-Bomber-379.2X379.2.jpg" />
+                            <img src="~/Images/Margherita-500x500.jpg" />
                         </div>
                         <div class="box-text">
-                            <p>Bacon V-MAN</p>
+                            <h3>Bacon V-MAN</h3>
                         </div>
                         <ul>
                             <li>
@@ -95,7 +95,7 @@
                             <img src="~/Images/Buffalo-Chicken-300x300.jpg" />
                         </div>
                         <div class="box-text">
-                            <p>Salami V-MAN</p>
+                            <h3>Salami V-MAN</h3>
                         </div>
                         <ul>
                             <li>
@@ -118,10 +118,10 @@
                 <div class="col">
                     <a @*asp-action="" asp-controller=""*@>
                         <div class="box-img">
-                            <img src="~/Images/Margherita-500x500.jpg" />
+                            <img src="~/Images/Wild-Mushroom-500x500.jpg" />
                         </div>
                         <div class="box-text">
-                            <p>Pepperoni V-MAN</p>
+                            <h3>Pepperoni V-MAN</h3>
                         </div>
                         <ul>
                             <li>
@@ -145,21 +145,21 @@
                 <div class="col">
                     <a>
                         <div class="box-img">
-                            <img src="~/Images/Wild-Mushroom-500x500.jpg" />
+                            <img src="~/Images/mushroom.jpg" />
                         </div>
                         <div class="box-text">
-                            <p>Mushroom V-MAN</p>
+                            <h3>Mushroom V-MAN</h3>
                         </div>
                         <ul>
                             <li>
-                                <p>Small: ($2)    Qty:<input asp-for="QtySmus" type="number" id="MusS" onclick="UpdatePrice();" value="0" /></p>
+                                <p>Small: ($2)    :<input asp-for="QtySmus" type="number" id="MusS" onclick="UpdatePrice();" value="0" /></p>
                             </li>
                             <li>
-                                <p>Medium: ($4) Qty:<input asp-for="QtyMmus" type="number" id="MusM" onclick="UpdatePrice();" value="0" /></p>
+                                <p>Medium: ($4) :<input asp-for="QtyMmus" type="number" id="MusM" onclick="UpdatePrice();" value="0" /></p>
 
                             </li>
                             <li>
-                                <p>Large: ($6) Qty:<input asp-for="QtyLmus" type="number" id="MusL" onclick="UpdatePrice();" value="0" /></p>
+                                <p>Large: ($6) :<input asp-for="QtyLmus" type="number" id="MusL" onclick="UpdatePrice();" value="0" /></p>
 
                             </li>
                         </ul>
@@ -171,10 +171,10 @@
                 <div class="col">
                     <a @*asp-action="" asp-controller=""*@>
                         <div class="box-img">
-                            <img src="~/Images/Margherita-500x500.jpg" />
+                            <img src="~/Images/pepperoni pizza-800x800.png" />
                         </div>
                         <div class="box-text">
-                            <p>Pepperoni V-MAN</p>
+                            <h3>Cheese V-MAN</h3>
                         </div>
                         <ul>
                             <li>
@@ -198,10 +198,10 @@
                 <div class="col">
                     <a @*asp-action="" asp-controller=""*@>
                         <div class="box-img">
-                            <img src="~/Images/Margherita-500x500.jpg" />
+                            <img src="~/Images/original_bocce.jpg" />
                         </div>
                         <div class="box-text">
-                            <p>Pepperoni V-MAN</p>
+                            <h3>Chicken V-MAN</h3>
                         </div>
                         <ul>
                             <li>
@@ -225,19 +225,20 @@
             </div>
         </div>
     </div>
-    <br />
-    <div>
-        <span>Total Price: $</span>
-        <input type="text" id="totP" name="fname">
-    </div>
-    <div class="form-group">
-        <input type="submit" value="Create" class="btn btn-danger" />
-    </div>
+    @*<div class="float-right">*@
+        <div>
+            <span>Total Price: $</span>
+            <input type="text" id="totP" name="fname">
+        </div>
+        <div class="form-group">
+            <input type="submit" value="Create" class="btn btn-danger" />
+        </div>
+    @*</div>*@
 </form>
 
-<div>
+@*<div>
     <a asp-action="Index">Back to List</a>
-</div>
+</div>*@
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
