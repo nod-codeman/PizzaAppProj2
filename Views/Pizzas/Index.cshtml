@@ -79,19 +79,21 @@
                     <div class="box-text">
                         <p>Salami V-MAN</p>
                     </div>
-                    <ul>
-                        <li>
-                            <p>Small($2): @*<input type="checkbox" checked="checked"> <em>Small</em>:*@ <input asp-for="QtySsal" type="number" id="SalS" value="0" /></p>
-                        </li>
-                        <li>
-                            <p>Medium($5):<input asp-for="QtyMsal" type="number" id="SalM" value="0" /></p>
-                            @*<p>$3: <input type="checkbox"> <em>Medium</em></p>*@
-                        </li>
-                        <li>
-                            <p>Large($7): <input asp-for="QtyLsal" type="number" id="SalL" value="0" /></p>
-                            @*<p>$5: <input type="checkbox"> <em>Large</em></p>*@
-                        </li>
-                    </ul>
+                    <div>
+                        <ul>
+                            <li>
+                                <p>Small($2): @*<input type="checkbox" checked="checked"> <em>Small</em>:*@ <input asp-for="QtySsal" type="number" id="SalS" value="0" /></p>
+                            </li>
+                            <li>
+                                <p>Medium($5):<input asp-for="QtyMsal" type="number" id="SalM" value="0" /></p>
+                                @*<p>$3: <input type="checkbox"> <em>Medium</em></p>*@
+                            </li>
+                            <li>
+                                <p>Large($7): <input asp-for="QtyLsal" type="number" id="SalL" value="0" /></p>
+                                @*<p>$5: <input type="checkbox"> <em>Large</em></p>*@
+                            </li>
+                        </ul>
+                    </div>
                 </a>
                 <div>
                     <button align="right" type="submit" id="SalAdd" onclick="addSalami();" class="btn btn-danger">Add Order</button>
@@ -179,7 +181,7 @@
     <span>Total Price: $</span>
     <input type="text" id="totP" name="fname">
 </div>
-<div class="form-group" tyle="float: right;">
+<div class="form-group" style="float: right;">
     <input type="submit" value="-- Next --" class="btn btn-primary" />
 </div>
 @*<div>

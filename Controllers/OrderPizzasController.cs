@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
+using VMANpizza.Data;
 using VMANpizza.Models;
 using VMANpizza.Models.ViewModel;
 
@@ -26,21 +27,13 @@ namespace VMANpizza.Controllers
         }
 
         // GET: OrderPizzas/Details/5
-        public async Task<IActionResult> Details(int? id)
+        public async Task<IActionResult> Details()
         {
-            if (id == null)
-            {
-                return NotFound();
-            }
 
-            var orderPizza = await _context.OrderPizza
-                .FirstOrDefaultAsync(m => m.Id == id);
-            if (orderPizza == null)
-            {
-                return NotFound();
-            }
+            var PizzasList = Repository.GetPizzas();
+            
 
-            return View(orderPizza);
+            return View("Views/Pizzas/ConfirmOrderPizza.cshtml", PizzasList);
         }
 
         // GET: OrderPizzas/Create
@@ -57,7 +50,7 @@ namespace VMANpizza.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,QtySbac,QtyMbac,QtyLbac,QtySsal,QtyMsal,QtyLsal,QtySpep,QtyMpep,QtyLpep,QtySmus,QtyMmus,QtyLmus,customerId,orderId")] OrderPizza orderPizza)
+        public async Task<IActionResult> Create([Bind("Id,QtySbac,QtyMbac,QtyLbac,QtySsal,QtyMsal,QtyLsal,QtySpep,QtyMpep,QtyLpep,QtySmus,QtyMmus,QtyLmus,QtySche,QtyMche,QtyLche,QtySchk,QtyMchk,QtyLchk, customerId,orderId")] OrderPizza orderPizza)
         {
             //if (ModelState.IsValid)
             //{
@@ -106,6 +99,26 @@ namespace VMANpizza.Controllers
                 QtyS = orderPizza.QtySmus,
                 QtyM = orderPizza.QtyMmus,
                 QtyL = orderPizza.QtyLmus,
+            },
+            new Pizza()
+            {
+                PizzaType = "Cheese",
+                PriceS = 2,
+                PriceM = 4,
+                PriceL = 6,
+                QtyS = orderPizza.QtySche,
+                QtyM = orderPizza.QtyMche,
+                QtyL = orderPizza.QtyLche,
+            },
+            new Pizza()
+            {
+                PizzaType = "Chicken",
+                PriceS = 2,
+                PriceM = 4,
+                PriceL = 6,
+                QtyS = orderPizza.QtySchk,
+                QtyM = orderPizza.QtyMchk,
+                QtyL = orderPizza.QtyLchk,
             }
             };
             return View("Views/Pizzas/ConfirmOrderPizzas.cshtml", PizzasList);
