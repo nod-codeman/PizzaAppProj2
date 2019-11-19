@@ -58,7 +58,7 @@
 </p>
 <hr />
 
-<form asp-action="Create">
+<form asp-action="PostOrder" asp-controller="Serv">
     <div asp-validation-summary="ModelOnly" class="text-danger"></div>
     <div class="container-fluid">
         <div class="m-md-4">
@@ -76,7 +76,7 @@
                                 <p>Small($2): <input asp-for="QtySbac" type="number" id="BacS" onclick="UpdatePrice();" value="0" /></p>
                             </li>
                             <li>
-                                <p>Medium($5): <input asp-validation-for="QtyMbac" type="number" id="BacM" onclick="UpdatePrice();" value="0" /></p>
+                                <p>Medium($5): <input asp-for="QtyMbac" type="number" id="BacM" onclick="UpdatePrice();" value="0" /></p>
                                 @*<p>$3: <input type="checkbox"> <em>Medium</em></p>*@
                             </li>
                             <li>

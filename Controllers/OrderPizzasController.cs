@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
+using VMANpizza.Data;
 using VMANpizza.Models;
 using VMANpizza.Models.ViewModel;
 
@@ -26,21 +27,13 @@ namespace VMANpizza.Controllers
         }
 
         // GET: OrderPizzas/Details/5
-        public async Task<IActionResult> Details(int? id)
+        public async Task<IActionResult> Details()
         {
-            if (id == null)
-            {
-                return NotFound();
-            }
 
-            var orderPizza = await _context.OrderPizza
-                .FirstOrDefaultAsync(m => m.Id == id);
-            if (orderPizza == null)
-            {
-                return NotFound();
-            }
+            var PizzasList = Repository.GetPizzas();
+            
 
-            return View(orderPizza);
+            return View("Views/Pizzas/ConfirmOrderPizza.cshtml", PizzasList);
         }
 
         // GET: OrderPizzas/Create
