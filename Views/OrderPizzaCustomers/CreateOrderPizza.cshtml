@@ -1,0 +1,193 @@
+﻿@model VMANpizza.Models.ViewModel.OrderPizzaCustomer
+
+@{
+    ViewData["Title"] = "CreateOrderPizza";
+}
+
+<h1>CreateOrderPizza</h1>
+
+<h4>OrderPizzaCustomer</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="CreateOrderPizza">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="QtySbac" class="control-label"></label>
+                <input asp-for="QtySbac" class="form-control" />
+                <span asp-validation-for="QtySbac" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="QtyMbac" class="control-label"></label>
+                <input asp-for="QtyMbac" class="form-control" />
+                <span asp-validation-for="QtyMbac" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="QtyLbac" class="control-label"></label>
+                <input asp-for="QtyLbac" class="form-control" />
+                <span asp-validation-for="QtyLbac" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="QtySsal" class="control-label"></label>
+                <input asp-for="QtySsal" class="form-control" />
+                <span asp-validation-for="QtySsal" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="QtyMsal" class="control-label"></label>
+                <input asp-for="QtyMsal" class="form-control" />
+                <span asp-validation-for="QtyMsal" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="QtyLsal" class="control-label"></label>
+                <input asp-for="QtyLsal" class="form-control" />
+                <span asp-validation-for="QtyLsal" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="QtySpep" class="control-label"></label>
+                <input asp-for="QtySpep" class="form-control" />
+                <span asp-validation-for="QtySpep" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="QtyMpep" class="control-label"></label>
+                <input asp-for="QtyMpep" class="form-control" />
+                <span asp-validation-for="QtyMpep" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="QtyLpep" class="control-label"></label>
+                <input asp-for="QtyLpep" class="form-control" />
+                <span asp-validation-for="QtyLpep" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="QtySmus" class="control-label"></label>
+                <input asp-for="QtySmus" class="form-control" />
+                <span asp-validation-for="QtySmus" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="QtyMmus" class="control-label"></label>
+                <input asp-for="QtyMmus" class="form-control" />
+                <span asp-validation-for="QtyMmus" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="QtyLmus" class="control-label"></label>
+                <input asp-for="QtyLmus" class="form-control" />
+                <span asp-validation-for="QtyLmus" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PriceSbac" class="control-label"></label>
+                <input asp-for="PriceSbac" class="form-control" />
+                <span asp-validation-for="PriceSbac" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PriceMbac" class="control-label"></label>
+                <input asp-for="PriceMbac" class="form-control" />
+                <span asp-validation-for="PriceMbac" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PriceLbac" class="control-label"></label>
+                <input asp-for="PriceLbac" class="form-control" />
+                <span asp-validation-for="PriceLbac" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PriceSsal" class="control-label"></label>
+                <input asp-for="PriceSsal" class="form-control" />
+                <span asp-validation-for="PriceSsal" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PriceMsal" class="control-label"></label>
+                <input asp-for="PriceMsal" class="form-control" />
+                <span asp-validation-for="PriceMsal" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PriceLsal" class="control-label"></label>
+                <input asp-for="PriceLsal" class="form-control" />
+                <span asp-validation-for="PriceLsal" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PriceSpep" class="control-label"></label>
+                <input asp-for="PriceSpep" class="form-control" />
+                <span asp-validation-for="PriceSpep" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PriceMpep" class="control-label"></label>
+                <input asp-for="PriceMpep" class="form-control" />
+                <span asp-validation-for="PriceMpep" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PriceLpep" class="control-label"></label>
+                <input asp-for="PriceLpep" class="form-control" />
+                <span asp-validation-for="PriceLpep" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PriceSmus" class="control-label"></label>
+                <input asp-for="PriceSmus" class="form-control" />
+                <span asp-validation-for="PriceSmus" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PriceMmus" class="control-label"></label>
+                <input asp-for="PriceMmus" class="form-control" />
+                <span asp-validation-for="PriceMmus" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PriceLmus" class="control-label"></label>
+                <input asp-for="PriceLmus" class="form-control" />
+                <span asp-validation-for="PriceLmus" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="pizzaTypeBac" class="control-label"></label>
+                <input asp-for="pizzaTypeBac" class="form-control" />
+                <span asp-validation-for="pizzaTypeBac" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="pizzaTypeSal" class="control-label"></label>
+                <input asp-for="pizzaTypeSal" class="form-control" />
+                <span asp-validation-for="pizzaTypeSal" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="pizzaTypePep" class="control-label"></label>
+                <input asp-for="pizzaTypePep" class="form-control" />
+                <span asp-validation-for="pizzaTypePep" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="pizzaTypeMus" class="control-label"></label>
+                <input asp-for="pizzaTypeMus" class="form-control" />
+                <span asp-validation-for="pizzaTypeMus" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="customerId" class="control-label"></label>
+                <input asp-for="customerId" class="form-control" />
+                <span asp-validation-for="customerId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="orderId" class="control-label"></label>
+                <input asp-for="orderId" class="form-control" />
+                <span asp-validation-for="orderId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="cartId" class="control-label"></label>
+                <input asp-for="cartId" class="form-control" />
+                <span asp-validation-for="cartId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="OrderDate" class="control-label"></label>
+                <input asp-for="OrderDate" class="form-control" />
+                <span asp-validation-for="OrderDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="totalPrice" class="control-label"></label>
+                <input asp-for="totalPrice" class="form-control" />
+                <span asp-validation-for="totalPrice" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

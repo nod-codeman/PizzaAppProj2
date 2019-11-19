@@ -24,10 +24,6 @@ namespace VMANpizza.Models.ViewModel
         public double QtyMmus { get; set; }
         public double QtyLmus { get; set; }
 
-        //public Pizza bacPizza {get; set;}
-        //public Pizza salPizza { get; set; }
-        //public Pizza pepPizza { get; set; }
-        //public Pizza musPizza { get; set; }
         public int customerId { get; set; }
         public int orderId { get; set; }
     }

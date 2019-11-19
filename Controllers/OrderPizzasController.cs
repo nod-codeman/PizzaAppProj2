@@ -108,7 +108,7 @@ namespace VMANpizza.Controllers
                 QtyL = orderPizza.QtyLmus,
             }
             };
-            return View("Views/Pizzas/ConfirmOrderPizza.cshtml", PizzasList);
+            return View("Views/Pizzas/ConfirmOrderPizzas.cshtml", PizzasList);
             //return View(orderPizza);
         }
 
@@ -256,7 +256,8 @@ namespace VMANpizza.Controllers
                 QtyL = orderPizza.QtyLmus,
             }
             };
-            return View("Views/Pizzas/ConfirmOrderPizza.cshtml", PizzasList);
+            //return View("Views/Pizzas/ConfirmOrderPizzas.cshtml", PizzasList);
+            return View("Views/OrderPizzaCustomers/CreateOrderPizza.cshtml", PizzasList);
         }
 
     }

@@ -152,26 +152,32 @@ namespace VMANpizza.Controllers
             return _context.Pizzas.Any(e => e.Id == id);
         }
 
-        //public IActionResult ConfirmOrderPizza(List<Pizza> PizzasList)
-        //{
-
-        //    return View(PizzasList);
-        //}
+        public IActionResult ConfirmOrderPizzas(List<Pizza> PizzasList)
+        {
+            //int OrderId = await 
+            return View(PizzasList);
+        }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> ConfirmOrderPizza(List<Pizza> PizzasList)
+        public async Task<IActionResult> ConfirmOrderPizzas(List<Pizza> PizzasList, Order order, int? Id)
         {
-
+            order.CustomerId = Convert.ToInt32(Id);
+            var OrderId = await _context.Orders.ToListAsync();
+            int currOrderId = OrderId.Max(o => o.Id)+1;
+            
             if (ModelState.IsValid)
             {
                 for (int i = 0; i < 4; i++)
                 {
-                    if(PizzasList[i].QtyS != 0 || PizzasList[i].QtyM != 0 || PizzasList[i].QtyL != 0)
+                    PizzasList[i].OrderId = currOrderId;
+                    if (PizzasList[i].QtyS != 0 || PizzasList[i].QtyM != 0 || PizzasList[i].QtyL != 0)
                     {
                         _context.Add(PizzasList[i]);
                         await _context.SaveChangesAsync();                       
                     }
                 }
+                _context.Add(order);
+                await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
             return View(PizzasList);

@@ -156,67 +156,6 @@ namespace VMANpizza.Controllers
             return View(PizzasList);
         }
 
-        //// POST: Orders/Create
-        //// To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        //// more details see http://go.microsoft.com/fwlink/?LinkId=317598.
-        //[HttpPost]
-        //[ValidateAntiForgeryToken]
-        ////public async Task<IActionResult> ConfirmOrder([Bind("Id,CustomerId,OrderDate,totalPrice")] Order order)
-        //public async Task<IActionResult> ConfirmOrder(List<Order> PizzasList)
-        //{
-        //    //List<Pizza> PizzasList = new List<Pizza>
-        //    //{
-        //    //new Pizza()
-        //    //{
-        //    //    PizzaType = "Bacon",
-        //    //    PriceS = 2,
-        //    //    PriceM = 5,
-        //    //    PriceL = 7,
-        //    //    QtyS = orderPizza.QtySbac,
-        //    //    QtyM = orderPizza.QtyMbac,
-        //    //    QtyL = orderPizza.QtyLbac,
-        //    //},
-        //    //new Pizza()
-        //    //{
-        //    //    PizzaType = "Salami",
-        //    //    PriceS = 3,
-        //    //    PriceM = 6,
-        //    //    PriceL = 8,
-        //    //    QtyS = orderPizza.QtySsal,
-        //    //    QtyM = orderPizza.QtyMsal,
-        //    //    QtyL = orderPizza.QtyLsal,
-        //    //},
-        //    //new Pizza()
-        //    //{
-        //    //    PizzaType = "Pepperoni",
-        //    //    PriceS = 2,
-        //    //    PriceM = 5,
-        //    //    PriceL = 7,
-        //    //    QtyS = orderPizza.QtySpep,
-        //    //    QtyM = orderPizza.QtyMpep,
-        //    //    QtyL = orderPizza.QtyLpep,
-        //    //},
-        //    //new Pizza()
-        //    //{
-        //    //    PizzaType = "Mushroom",
-        //    //    PriceS = 2,
-        //    //    PriceM = 4,
-        //    //    PriceL = 6,
-        //    //    QtyS = orderPizza.QtySmus,
-        //    //    QtyM = orderPizza.QtyMmus,
-        //    //    QtyL = orderPizza.QtyLmus,
-        //    //}
-        //    //};
-        //    //if (ModelState.IsValid)
-        //    //{
-        //    //    _context.Add(PizzasList[0]);
-        //    //    _context.Add(PizzasList[1]);
-        //    //    _context.Add(PizzasList[2]);
-        //    //    _context.Add(PizzasList[3]);
-        //    //    await _context.SaveChangesAsync();
-        //    //    return RedirectToAction(nameof(Index));
-        //    //}
-        //    return View();
-        //}
+        
     }
 }
