@@ -152,9 +152,28 @@ namespace VMANpizza.Controllers
             return _context.Pizzas.Any(e => e.Id == id);
         }
 
-        public IActionResult ConfirmOrderPizza(List<Pizza> PizzasList)
+        //public IActionResult ConfirmOrderPizza(List<Pizza> PizzasList)
+        //{
+
+        //    return View(PizzasList);
+        //}
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> ConfirmOrderPizza(List<Pizza> PizzasList)
         {
 
+            if (ModelState.IsValid)
+            {
+                for (int i = 0; i < 4; i++)
+                {
+                    if(PizzasList[i].QtyS != 0 || PizzasList[i].QtyM != 0 || PizzasList[i].QtyL != 0)
+                    {
+                        _context.Add(PizzasList[i]);
+                        await _context.SaveChangesAsync();                       
+                    }
+                }
+                return RedirectToAction(nameof(Index));
+            }
             return View(PizzasList);
         }
     }
