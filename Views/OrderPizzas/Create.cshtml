@@ -46,7 +46,13 @@
              var BacS = parseFloat(+document.getElementById("BacS").value);
             var BacM = parseFloat(+document.getElementById("BacM").value);
             var BacL = parseFloat(+document.getElementById("BacL").value);
-            document.getElementById("totP").value = ((MusS * 2) + (MusM * 4) + (MusL * 6)) +((BacS * 2) + (BacM * 5) + (BacL * 7)) + ((PepS * 2) + (PepM * 5) + (PepL * 7)) +((SalS * 3) + (SalM * 6) + (SalL * 8));
+             var CheS = parseFloat(+document.getElementById("CheS").value);
+            var CheM = parseFloat(+document.getElementById("CheM").value);
+            var CheL = parseFloat(+document.getElementById("CheL").value);
+             var ChkS = parseFloat(+document.getElementById("ChkS").value);
+            var ChkM = parseFloat(+document.getElementById("ChkM").value);
+            var ChkL = parseFloat(+document.getElementById("ChkL").value);
+            document.getElementById("totP").value = ((MusS * 2) + (MusM * 4) + (MusL * 6)) +((BacS * 2) + (BacM * 5) + (BacL * 7)) + ((PepS * 2) + (PepM * 5) + (PepL * 7)) +((SalS * 3) + (SalM * 6) + (SalL * 8)) +((CheS * 2) + (CheM * 4) + (CheL * 6)) +((ChkS * 2) + (ChkM * 4) + (ChkL * 6));
         }
     </script>
 </head>
@@ -178,15 +184,15 @@
                         </div>
                         <ul>
                             <li>
-                                <p>Small: ($2)    <input asp-for="QtySpep" type="number" id="PepS" onclick="UpdatePrice();" value="0" /></p>
+                                <p>Small: ($2)    <input asp-for="QtySche" type="number" id="CheS" onclick="UpdatePrice();" value="0" /></p>
                                 @*<input type="checkbox" checked="checked"> <em>Small</em>:*@
                             </li>
                             <li>
-                                <p>Medium: ($5) <input asp-for="QtyMpep" type="number" id="PepM" onclick="UpdatePrice();" value="0" /></p>
+                                <p>Medium: ($5) <input asp-for="QtyMche" type="number" id="CheM" onclick="UpdatePrice();" value="0" /></p>
                                 @*<p>$3: <input type="checkbox"> <em>Medium</em></p>*@
                             </li>
                             <li>
-                                <p>Large: ($7) <input asp-for="QtyLpep" type="number" id="PepL" onclick="UpdatePrice();" value="0" /></p>
+                                <p>Large: ($7) <input asp-for="QtyLche" type="number" id="CheL" onclick="UpdatePrice();" value="0" /></p>
                                 @*<p>$5: <input type="checkbox"> <em>Large</em></p>*@
                             </li>
                         </ul>
@@ -205,15 +211,15 @@
                         </div>
                         <ul>
                             <li>
-                                <p>Small: ($2)    <input asp-for="QtySpep" type="number" id="PepS" onclick="UpdatePrice();" value="0" /></p>
+                                <p>Small: ($2)    <input asp-for="QtySchk" type="number" id="ChkS" onclick="UpdatePrice();" value="0" /></p>
                                 @*<input type="checkbox" checked="checked"> <em>Small</em>:*@
                             </li>
                             <li>
-                                <p>Medium: ($5) <input asp-for="QtyMpep" type="number" id="PepM" onclick="UpdatePrice();" value="0" /></p>
+                                <p>Medium: ($5) <input asp-for="QtyMchk" type="number" id="ChkM" onclick="UpdatePrice();" value="0" /></p>
                                 @*<p>$3: <input type="checkbox"> <em>Medium</em></p>*@
                             </li>
                             <li>
-                                <p>Large: ($7) <input asp-for="QtyLpep" type="number" id="PepL" onclick="UpdatePrice();" value="0" /></p>
+                                <p>Large: ($7) <input asp-for="QtyLchk" type="number" id="ChkL" onclick="UpdatePrice();" value="0" /></p>
                                 @*<p>$5: <input type="checkbox"> <em>Large</em></p>*@
                             </li>
                         </ul>
