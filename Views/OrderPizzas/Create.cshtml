@@ -73,21 +73,21 @@
                         </div>
                         <ul>
                             <li>
-                                <p>Small($2): <input asp-for="QtySbac" type="number" id="BacS" onclick="UpdatePrice();" value="0" /></p>
+                                <p>Small: ($2)    <input asp-for="QtySbac" type="number" id="BacS" onclick="UpdatePrice();" value="0" /></p>
                             </li>
                             <li>
-                                <p>Medium($5): <input asp-validation-for="QtyMbac" type="number" id="BacM" onclick="UpdatePrice();" value="0" /></p>
+                                <p>Medium: ($5) <input asp-validation-for="QtyMbac" type="number" id="BacM" onclick="UpdatePrice();" value="0" /></p>
                                 @*<p>$3: <input type="checkbox"> <em>Medium</em></p>*@
                             </li>
                             <li>
-                                <p>Large($7): <input asp-for="QtyLbac" type="number" id="BacL" onclick="UpdatePrice();" value="0" /></p>
+                                <p>Large: ($7) <input asp-for="QtyLbac" type="number" id="BacL" onclick="UpdatePrice();" value="0" /></p>
                                 @*<p>$5: <input type="checkbox"> <em>Large</em></p>*@
                             </li>
                         </ul>
                     </a>
                     @*<div>
-                            <button align="right" type="submit" id="BacAdd" onclick="addBacon();" class="btn btn-danger">Add Order</button>
-                        </div>*@
+                <button align="right" type="submit" id="BacAdd" onclick="addBacon();" class="btn btn-danger">Add Order</button>
+            </div>*@
                 </div>
                 <div class="col">
                     <a @*asp-action="" asp-controller=""*@>
@@ -99,21 +99,21 @@
                         </div>
                         <ul>
                             <li>
-                                <p>Small($3): @*<input type="checkbox" checked="checked"> <em>Small</em>:*@ <input asp-for="QtySsal" type="number" id="SalS" onclick="UpdatePrice();" value="0" /></p>
+                                <p>Small: ($3)    @*<input type="checkbox" checked="checked"> <em>Small</em>:*@ <input asp-for="QtySsal" type="number" id="SalS" onclick="UpdatePrice();" value="0" /></p>
                             </li>
                             <li>
-                                <p>Medium($6):<input asp-for="QtyMsal" type="number" id="SalM" onclick="UpdatePrice();" value="0" /></p>
+                                <p>Medium: ($6)<input asp-for="QtyMsal" type="number" id="SalM" onclick="UpdatePrice();" value="0" /></p>
                                 @*<p>$3: <input type="checkbox"> <em>Medium</em></p>*@
                             </li>
                             <li>
-                                <p>Large($8): <input asp-for="QtyLsal" type="number" id="SalL" onclick="UpdatePrice();" value="0" /></p>
+                                <p>Large: ($8) <input asp-for="QtyLsal" type="number" id="SalL" onclick="UpdatePrice();" value="0" /></p>
                                 @*<p>$5: <input type="checkbox"> <em>Large</em></p>*@
                             </li>
                         </ul>
                     </a>
                     @*<div>
-                            <button align="right" type="submit" id="SalAdd" onclick="addSalami();" class="btn btn-danger">Add Order</button>
-                        </div>*@
+                <button align="right" type="submit" id="SalAdd" onclick="addSalami();" class="btn btn-danger">Add Order</button>
+            </div>*@
                 </div>
                 <div class="col">
                     <a @*asp-action="" asp-controller=""*@>
@@ -125,21 +125,22 @@
                         </div>
                         <ul>
                             <li>
-                                <p>Small($2): @*<input type="checkbox" checked="checked"> <em>Small</em>:*@ <input asp-for="QtySpep" type="number" id="PepS" onclick="UpdatePrice();" value="0" /></p>
+                                <p>Small: ($2)    <input asp-for="QtySpep" type="number" id="PepS" onclick="UpdatePrice();" value="0" /></p>
+                                @*<input type="checkbox" checked="checked"> <em>Small</em>:*@
                             </li>
                             <li>
-                                <p>Medium($5): <input asp-for="QtyMpep" type="number" id="PepM" onclick="UpdatePrice();" value="0" /></p>
+                                <p>Medium: ($5) <input asp-for="QtyMpep" type="number" id="PepM" onclick="UpdatePrice();" value="0" /></p>
                                 @*<p>$3: <input type="checkbox"> <em>Medium</em></p>*@
                             </li>
                             <li>
-                                <p>Large($7): <input asp-for="QtyLpep" type="number" id="PepL" onclick="UpdatePrice();" value="0" /></p>
+                                <p>Large: ($7) <input asp-for="QtyLpep" type="number" id="PepL" onclick="UpdatePrice();" value="0" /></p>
                                 @*<p>$5: <input type="checkbox"> <em>Large</em></p>*@
                             </li>
                         </ul>
                     </a>
                     @*<div>
-                            <button align="right" type="submit" id="PepAdd" onclick="addPepperoni();" class="btn btn-danger">Add Order</button>
-                        </div>*@
+                <button align="right" type="submit" id="PepAdd" onclick="addPepperoni();" class="btn btn-danger">Add Order</button>
+            </div>*@
                 </div>
                 <div class="col">
                     <a>
@@ -151,26 +152,80 @@
                         </div>
                         <ul>
                             <li>
-                                <p>Small($2): Qty:<input asp-for="QtySmus" type="number" id="MusS" onclick="UpdatePrice();" value="0" /></p>
+                                <p>Small: ($2)    Qty:<input asp-for="QtySmus" type="number" id="MusS" onclick="UpdatePrice();" value="0" /></p>
                             </li>
                             <li>
-                                <p>Medium($4): Qty:<input asp-for="QtyMmus" type="number" id="MusM" onclick="UpdatePrice();" value="0" /></p>
+                                <p>Medium: ($4) Qty:<input asp-for="QtyMmus" type="number" id="MusM" onclick="UpdatePrice();" value="0" /></p>
 
                             </li>
                             <li>
-                                <p>Large($6): Qty:<input asp-for="QtyLmus" type="number" id="MusL" onclick="UpdatePrice();" value="0" /></p>
+                                <p>Large: ($6) Qty:<input asp-for="QtyLmus" type="number" id="MusL" onclick="UpdatePrice();" value="0" /></p>
 
                             </li>
                         </ul>
                     </a>
                     @*<div>
-                            <button align="right" type="submit" id="MusAdd" onclick="addMushroom();" class="btn btn-danger">Add Order</button>
-                        </div>*@
+                <button align="right" type="submit" id="MusAdd" onclick="addMushroom();" class="btn btn-danger">Add Order</button>
+            </div>*@
+                </div>
+                <div class="col">
+                    <a @*asp-action="" asp-controller=""*@>
+                        <div class="box-img">
+                            <img src="~/Images/Margherita-500x500.jpg" />
+                        </div>
+                        <div class="box-text">
+                            <p>Pepperoni V-MAN</p>
+                        </div>
+                        <ul>
+                            <li>
+                                <p>Small: ($2)    <input asp-for="QtySpep" type="number" id="PepS" onclick="UpdatePrice();" value="0" /></p>
+                                @*<input type="checkbox" checked="checked"> <em>Small</em>:*@
+                            </li>
+                            <li>
+                                <p>Medium: ($5) <input asp-for="QtyMpep" type="number" id="PepM" onclick="UpdatePrice();" value="0" /></p>
+                                @*<p>$3: <input type="checkbox"> <em>Medium</em></p>*@
+                            </li>
+                            <li>
+                                <p>Large: ($7) <input asp-for="QtyLpep" type="number" id="PepL" onclick="UpdatePrice();" value="0" /></p>
+                                @*<p>$5: <input type="checkbox"> <em>Large</em></p>*@
+                            </li>
+                        </ul>
+                    </a>
+                    @*<div>
+                <button align="right" type="submit" id="PepAdd" onclick="addPepperoni();" class="btn btn-danger">Add Order</button>
+            </div>*@
+                </div>
+                <div class="col">
+                    <a @*asp-action="" asp-controller=""*@>
+                        <div class="box-img">
+                            <img src="~/Images/Margherita-500x500.jpg" />
+                        </div>
+                        <div class="box-text">
+                            <p>Pepperoni V-MAN</p>
+                        </div>
+                        <ul>
+                            <li>
+                                <p>Small: ($2)    <input asp-for="QtySpep" type="number" id="PepS" onclick="UpdatePrice();" value="0" /></p>
+                                @*<input type="checkbox" checked="checked"> <em>Small</em>:*@
+                            </li>
+                            <li>
+                                <p>Medium: ($5) <input asp-for="QtyMpep" type="number" id="PepM" onclick="UpdatePrice();" value="0" /></p>
+                                @*<p>$3: <input type="checkbox"> <em>Medium</em></p>*@
+                            </li>
+                            <li>
+                                <p>Large: ($7) <input asp-for="QtyLpep" type="number" id="PepL" onclick="UpdatePrice();" value="0" /></p>
+                                @*<p>$5: <input type="checkbox"> <em>Large</em></p>*@
+                            </li>
+                        </ul>
+                    </a>
+                    @*<div>
+                <button align="right" type="submit" id="PepAdd" onclick="addPepperoni();" class="btn btn-danger">Add Order</button>
+            </div>*@
                 </div>
             </div>
         </div>
     </div>
-
+    <br />
     <div>
         <span>Total Price: $</span>
         <input type="text" id="totP" name="fname">
