@@ -22,8 +22,8 @@ namespace VMANpizza.Controllers
         // GET: Pizzas
         public async Task<IActionResult> Index()
         {
-            List<Pizza> Pizzas = new List<Pizza>();
-            Pizza pizza = new Pizza();
+            //List<Pizza> Pizzas = new List<Pizza>();
+            //Pizza pizza = new Pizza();
             //pizza.PizzaType = 
             return View(await _repo.Get());
         }

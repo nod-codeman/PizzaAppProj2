@@ -21,14 +21,13 @@ namespace VMANpizza.Data
         }
         public static IEnumerable<Pizza> GetPizzas()
         {
-            var PizzaList = AllOrders.TakeLast(4);
+            var PizzaList = AllOrders.TakeLast(6);
 
             return PizzaList;
         }
 
         public static void Restore(Pizza order)
         {
-
 
             AllOrders.Add(order);
 
