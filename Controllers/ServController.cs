@@ -35,11 +35,12 @@ namespace VMANpizza.Controllers
             register.TotalPrice(form);
 
 
-            return RedirectToAction("Details", "OrderPizzas");
+            //return RedirectToAction("Details", "OrderPizzas");
+            return RedirectToAction("CreateOrderPizza", "OrderPizzaCustomers");
         }
-    
-    // GET: api/Serv
-    [HttpGet]
+
+        // GET: api/Serv
+        [HttpGet]
         public async Task<ActionResult<IEnumerable<Pizza>>> GetPizzas()
         {
             return await _context.Pizzas.ToListAsync();

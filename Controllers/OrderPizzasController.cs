@@ -41,12 +41,76 @@ namespace VMANpizza.Controllers
         {
             OrderPizza orderPizza = new OrderPizza();
             orderPizza.QtySbac = 0;
-            return View(orderPizza);
+            //List<Pizza> PizzasList = new List<Pizza>
+            //{
+            //new Pizza()
+            //{
+            //    PizzaType = "Bacon",
+            //    PriceS = 2,
+            //    PriceM = 5,
+            //    PriceL = 7,
+            //    QtyS = orderPizza.QtySbac,
+            //    QtyM = orderPizza.QtyMbac,
+            //    QtyL = orderPizza.QtyLbac,
+            //},
+            //new Pizza()
+            //{
+            //    PizzaType = "Salami",
+            //    PriceS = 3,
+            //    PriceM = 6,
+            //    PriceL = 8,
+            //    QtyS = orderPizza.QtySsal,
+            //    QtyM = orderPizza.QtyMsal,
+            //    QtyL = orderPizza.QtyLsal,
+            //},
+            //new Pizza()
+            //{
+            //    PizzaType = "Pepperoni",
+            //    PriceS = 2,
+            //    PriceM = 5,
+            //    PriceL = 7,
+            //    QtyS = orderPizza.QtySpep,
+            //    QtyM = orderPizza.QtyMpep,
+            //    QtyL = orderPizza.QtyLpep,
+            //},
+            //new Pizza()
+            //{
+            //    PizzaType = "Mushroom",
+            //    PriceS = 2,
+            //    PriceM = 4,
+            //    PriceL = 6,
+            //    QtyS = orderPizza.QtySmus,
+            //    QtyM = orderPizza.QtyMmus,
+            //    QtyL = orderPizza.QtyLmus,
+            //},
+            //new Pizza()
+            //{
+            //    PizzaType = "Cheese",
+            //    PriceS = 2,
+            //    PriceM = 4,
+            //    PriceL = 6,
+            //    QtyS = orderPizza.QtySche,
+            //    QtyM = orderPizza.QtyMche,
+            //    QtyL = orderPizza.QtyLche,
+            //},
+            //new Pizza()
+            //{
+            //    PizzaType = "Chicken",
+            //    PriceS = 2,
+            //    PriceM = 4,
+            //    PriceL = 6,
+            //    QtyS = orderPizza.QtySchk,
+            //    QtyM = orderPizza.QtyMchk,
+            //    QtyL = orderPizza.QtyLchk,
+            //}
+            //};
+            
+            return View(/*PizzasList*/);
             //return View();
         }
 
-        // POST: OrderPizzas/Create
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        //POST: OrderPizzas/Create
+        //To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -58,70 +122,70 @@ namespace VMANpizza.Controllers
             //    await _context.SaveChangesAsync();
             //    return RedirectToAction(nameof(Index));
             //}
-            List<Pizza> PizzasList = new List<Pizza>
-            {
-            new Pizza()
-            {
-                PizzaType = "Bacon",
-                PriceS = 2,
-                PriceM = 5,
-                PriceL = 7,
-                QtyS = orderPizza.QtySbac,
-                QtyM = orderPizza.QtyMbac,
-                QtyL = orderPizza.QtyLbac,
-            },
-            new Pizza()
-            {
-                PizzaType = "Salami",
-                PriceS = 3,
-                PriceM = 6,
-                PriceL = 8,
-                QtyS = orderPizza.QtySsal,
-                QtyM = orderPizza.QtyMsal,
-                QtyL = orderPizza.QtyLsal,
-            },
-            new Pizza()
-            {
-                PizzaType = "Pepperoni",
-                PriceS = 2,
-                PriceM = 5,
-                PriceL = 7,
-                QtyS = orderPizza.QtySpep,
-                QtyM = orderPizza.QtyMpep,
-                QtyL = orderPizza.QtyLpep,
-            },
-            new Pizza()
-            {
-                PizzaType = "Mushroom",
-                PriceS = 2,
-                PriceM = 4,
-                PriceL = 6,
-                QtyS = orderPizza.QtySmus,
-                QtyM = orderPizza.QtyMmus,
-                QtyL = orderPizza.QtyLmus,
-            },
-            new Pizza()
-            {
-                PizzaType = "Cheese",
-                PriceS = 2,
-                PriceM = 4,
-                PriceL = 6,
-                QtyS = orderPizza.QtySche,
-                QtyM = orderPizza.QtyMche,
-                QtyL = orderPizza.QtyLche,
-            },
-            new Pizza()
-            {
-                PizzaType = "Chicken",
-                PriceS = 2,
-                PriceM = 4,
-                PriceL = 6,
-                QtyS = orderPizza.QtySchk,
-                QtyM = orderPizza.QtyMchk,
-                QtyL = orderPizza.QtyLchk,
-            }
-            };
-            return View("Views/Pizzas/ConfirmOrderPizzas.cshtml", PizzasList);
+            //List<Pizza> PizzasList = new List<Pizza>
+            //{
+            //new Pizza()
+            //{
+            //    PizzaType = "Bacon",
+            //    PriceS = 2,
+            //    PriceM = 5,
+            //    PriceL = 7,
+            //    QtyS = orderPizza.QtySbac,
+            //    QtyM = orderPizza.QtyMbac,
+            //    QtyL = orderPizza.QtyLbac,
+            //},
+            //new Pizza()
+            //{
+            //    PizzaType = "Salami",
+            //    PriceS = 3,
+            //    PriceM = 6,
+            //    PriceL = 8,
+            //    QtyS = orderPizza.QtySsal,
+            //    QtyM = orderPizza.QtyMsal,
+            //    QtyL = orderPizza.QtyLsal,
+            //},
+            //new Pizza()
+            //{
+            //    PizzaType = "Pepperoni",
+            //    PriceS = 2,
+            //    PriceM = 5,
+            //    PriceL = 7,
+            //    QtyS = orderPizza.QtySpep,
+            //    QtyM = orderPizza.QtyMpep,
+            //    QtyL = orderPizza.QtyLpep,
+            //},
+            //new Pizza()
+            //{
+            //    PizzaType = "Mushroom",
+            //    PriceS = 2,
+            //    PriceM = 4,
+            //    PriceL = 6,
+            //    QtyS = orderPizza.QtySmus,
+            //    QtyM = orderPizza.QtyMmus,
+            //    QtyL = orderPizza.QtyLmus,
+            //},
+            //new Pizza()
+            //{
+            //    PizzaType = "Cheese",
+            //    PriceS = 2,
+            //    PriceM = 4,
+            //    PriceL = 6,
+            //    QtyS = orderPizza.QtySche,
+            //    QtyM = orderPizza.QtyMche,
+            //    QtyL = orderPizza.QtyLche,
+            //},
+            //new Pizza()
+            //{
+            //    PizzaType = "Chicken",
+            //    PriceS = 2,
+            //    PriceM = 4,
+            //    PriceL = 6,
+            //    QtyS = orderPizza.QtySchk,
+            //    QtyM = orderPizza.QtyMchk,
+            //    QtyL = orderPizza.QtyLchk,
+            //}
+            //};
+            return View("Views/Pizzas/ConfirmOrderPizzas.cshtml"/*, PizzasList*/);
             //return View(orderPizza);
         }
 
@@ -226,51 +290,51 @@ namespace VMANpizza.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> CreateOrderPizza([Bind("Id,QtySbac,QtyMbac,QtyLbac,QtySsal,QtyMsal,QtyLsal,QtySpep,QtyMpep,QtyLpep,QtySmus,QtyMmus,QtyLmus,customerId,orderId")] OrderPizza orderPizza)
         {
-            List<Pizza> PizzasList = new List<Pizza>
-            {
-            new Pizza()
-            {
-                PizzaType = "Bacon",
-                PriceS = 2,
-                PriceM = 5,
-                PriceL = 7,
-                QtyS = orderPizza.QtySbac,
-                QtyM = orderPizza.QtyMbac,
-                QtyL = orderPizza.QtyLbac,
-            },
-            new Pizza()
-            {
-                PizzaType = "Salami",
-                PriceS = 3,
-                PriceM = 6,
-                PriceL = 8,
-                QtyS = orderPizza.QtySsal,
-                QtyM = orderPizza.QtyMsal,
-                QtyL = orderPizza.QtyLsal,
-            },
-            new Pizza()
-            {
-                PizzaType = "Pepperoni",
-                PriceS = 2,
-                PriceM = 5,
-                PriceL = 7,
-                QtyS = orderPizza.QtySpep,
-                QtyM = orderPizza.QtyMpep,
-                QtyL = orderPizza.QtyLpep,
-            },
-            new Pizza()
-            {
-                PizzaType = "Mushroom",
-                PriceS = 2,
-                PriceM = 4,
-                PriceL = 6,
-                QtyS = orderPizza.QtySmus,
-                QtyM = orderPizza.QtyMmus,
-                QtyL = orderPizza.QtyLmus,
-            }
-            };
+            //List<Pizza> PizzasList = new List<Pizza>
+            //{
+            //new Pizza()
+            //{
+            //    PizzaType = "Bacon",
+            //    PriceS = 2,
+            //    PriceM = 5,
+            //    PriceL = 7,
+            //    QtyS = orderPizza.QtySbac,
+            //    QtyM = orderPizza.QtyMbac,
+            //    QtyL = orderPizza.QtyLbac,
+            //},
+            //new Pizza()
+            //{
+            //    PizzaType = "Salami",
+            //    PriceS = 3,
+            //    PriceM = 6,
+            //    PriceL = 8,
+            //    QtyS = orderPizza.QtySsal,
+            //    QtyM = orderPizza.QtyMsal,
+            //    QtyL = orderPizza.QtyLsal,
+            //},
+            //new Pizza()
+            //{
+            //    PizzaType = "Pepperoni",
+            //    PriceS = 2,
+            //    PriceM = 5,
+            //    PriceL = 7,
+            //    QtyS = orderPizza.QtySpep,
+            //    QtyM = orderPizza.QtyMpep,
+            //    QtyL = orderPizza.QtyLpep,
+            //},
+            //new Pizza()
+            //{
+            //    PizzaType = "Mushroom",
+            //    PriceS = 2,
+            //    PriceM = 4,
+            //    PriceL = 6,
+            //    QtyS = orderPizza.QtySmus,
+            //    QtyM = orderPizza.QtyMmus,
+            //    QtyL = orderPizza.QtyLmus,
+            //}
+            //};
             //return View("Views/Pizzas/ConfirmOrderPizzas.cshtml", PizzasList);
-            return View("Views/OrderPizzaCustomers/CreateOrderPizza.cshtml", PizzasList);
+            return View("Views/OrderPizzaCustomers/CreateOrderPizza.cshtml"/*, PizzasList*/);
         }
 
     }

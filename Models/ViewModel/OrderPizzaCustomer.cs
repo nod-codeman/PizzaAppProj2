@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -25,6 +26,14 @@ namespace VMANpizza.Models.ViewModel
         public double QtySmus { get; set; }
         public double QtyMmus { get; set; }
         public double QtyLmus { get; set; }
+
+        public double QtySche { get; set; }
+        public double QtyMche { get; set; }
+        public double QtyLche { get; set; }
+
+        public double QtySchk { get; set; }
+        public double QtyMchk { get; set; }
+        public double QtyLchk { get; set; }
         #endregion
 
         #region All prices
@@ -43,17 +52,28 @@ namespace VMANpizza.Models.ViewModel
         public double PriceSmus { get; set; }
         public double PriceMmus { get; set; }
         public double PriceLmus { get; set; }
+
+        public double PriceSche { get; set; }
+        public double PriceMche { get; set; }
+        public double PriceLche { get; set; }
+
+        public double PriceSchk { get; set; }
+        public double PriceMchk { get; set; }
+        public double PriceLchk { get; set; }
         #endregion
 
         #region All Pizza Types
-        public int pizzaTypeBac { get; set; }
-        public int pizzaTypeSal { get; set; }
-        public int pizzaTypePep { get; set; }
-        public int pizzaTypeMus { get; set; }
+        public string pizzaTypeBac { get; set; }
+        public string pizzaTypeSal { get; set; }
+        public string pizzaTypePep { get; set; }
+        public string pizzaTypeMus { get; set; }
+        public string pizzaTypeChe { get; set; }
+        public string pizzaTypeChk { get; set; }
         #endregion
         public int customerId { get; set; }
         public int orderId { get; set; }
         public int cartId { get; set; }
+        [DataType(DataType.Date)]
         public DateTime OrderDate { get; set; }
         public double totalPrice { get; set; }
     }

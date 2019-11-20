@@ -3,190 +3,243 @@
 @{
     ViewData["Title"] = "CreateOrderPizza";
 }
+<head>
+    <script>
+        function addBacon() {
+            var BacS = parseFloat(+document.getElementById("BacS").value);
+            var BacM = parseFloat(+document.getElementById("BacM").value);
+            var BacL = parseFloat(+document.getElementById("BacL").value);
 
-<h1>CreateOrderPizza</h1>
+            document.getElementById("totP").value = parseFloat(+document.getElementById("totP").value) + ((BacS * 2) + (BacM * 5) + (BacL * 7));
+        }
+        function addPepperoni() {
+            var PepS = parseFloat(+document.getElementById("PepS").value);
+            var PepM = parseFloat(+document.getElementById("PepM").value);
+            var PepL = parseFloat(+document.getElementById("PepL").value);
 
-<h4>OrderPizzaCustomer</h4>
+            document.getElementById("totP").value = parseFloat(+document.getElementById("totP").value) + ((PepS * 2) + (PepM * 5) + (PepL * 7));
+        }
+        function addSalami() {
+            var SalS = parseFloat(+document.getElementById("SalS").value);
+            var SalM = parseFloat(+document.getElementById("SalM").value);
+            var SalL = parseFloat(+document.getElementById("SalL").value);
+
+            document.getElementById("totP").value = parseFloat(+document.getElementById("totP").value) + ((SalS * 2) + (SalM * 5) + (SalL * 7));
+        }
+        function addMushroom() {
+            var MusS = parseFloat(+document.getElementById("MusS").value);
+            var MusM = parseFloat(+document.getElementById("MusM").value);
+            var MusL = parseFloat(+document.getElementById("MusL").value);
+
+            document.getElementById("totP").value = parseFloat(+document.getElementById("totP").value) + ((MusS * 2) + (MusM * 5) + (MusL * 7));
+        }
+         function UpdatePrice() {
+            var MusS = parseFloat(+document.getElementById("MusS").value);
+            var MusM = parseFloat(+document.getElementById("MusM").value);
+            var MusL = parseFloat(+document.getElementById("MusL").value);
+            var SalS = parseFloat(+document.getElementById("SalS").value);
+            var SalM = parseFloat(+document.getElementById("SalM").value);
+             var SalL = parseFloat(+document.getElementById("SalL").value);
+             var PepS = parseFloat(+document.getElementById("PepS").value);
+            var PepM = parseFloat(+document.getElementById("PepM").value);
+             var PepL = parseFloat(+document.getElementById("PepL").value);
+             var BacS = parseFloat(+document.getElementById("BacS").value);
+            var BacM = parseFloat(+document.getElementById("BacM").value);
+            var BacL = parseFloat(+document.getElementById("BacL").value);
+             var CheS = parseFloat(+document.getElementById("CheS").value);
+            var CheM = parseFloat(+document.getElementById("CheM").value);
+            var CheL = parseFloat(+document.getElementById("CheL").value);
+             var ChkS = parseFloat(+document.getElementById("ChkS").value);
+            var ChkM = parseFloat(+document.getElementById("ChkM").value);
+            var ChkL = parseFloat(+document.getElementById("ChkL").value);
+            document.getElementById("totP").value = ((MusS * 2) + (MusM * 4) + (MusL * 6)) +((BacS * 2) + (BacM * 5) + (BacL * 7)) + ((PepS * 2) + (PepM * 5) + (PepL * 7)) +((SalS * 3) + (SalM * 6) + (SalL * 8)) +((CheS * 2) + (CheM * 4) + (CheL * 6)) +((ChkS * 2) + (ChkM * 4) + (ChkL * 6));
+        }
+    </script>
+</head>
+
+<h3>Our V-MAN Pizza</h3>
+
+<p>
+    <a asp-action="Create">Customize your V-MAN pizza</a>
+</p>
 <hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="CreateOrderPizza">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="QtySbac" class="control-label"></label>
-                <input asp-for="QtySbac" class="form-control" />
-                <span asp-validation-for="QtySbac" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="QtyMbac" class="control-label"></label>
-                <input asp-for="QtyMbac" class="form-control" />
-                <span asp-validation-for="QtyMbac" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="QtyLbac" class="control-label"></label>
-                <input asp-for="QtyLbac" class="form-control" />
-                <span asp-validation-for="QtyLbac" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="QtySsal" class="control-label"></label>
-                <input asp-for="QtySsal" class="form-control" />
-                <span asp-validation-for="QtySsal" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="QtyMsal" class="control-label"></label>
-                <input asp-for="QtyMsal" class="form-control" />
-                <span asp-validation-for="QtyMsal" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="QtyLsal" class="control-label"></label>
-                <input asp-for="QtyLsal" class="form-control" />
-                <span asp-validation-for="QtyLsal" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="QtySpep" class="control-label"></label>
-                <input asp-for="QtySpep" class="form-control" />
-                <span asp-validation-for="QtySpep" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="QtyMpep" class="control-label"></label>
-                <input asp-for="QtyMpep" class="form-control" />
-                <span asp-validation-for="QtyMpep" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="QtyLpep" class="control-label"></label>
-                <input asp-for="QtyLpep" class="form-control" />
-                <span asp-validation-for="QtyLpep" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="QtySmus" class="control-label"></label>
-                <input asp-for="QtySmus" class="form-control" />
-                <span asp-validation-for="QtySmus" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="QtyMmus" class="control-label"></label>
-                <input asp-for="QtyMmus" class="form-control" />
-                <span asp-validation-for="QtyMmus" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="QtyLmus" class="control-label"></label>
-                <input asp-for="QtyLmus" class="form-control" />
-                <span asp-validation-for="QtyLmus" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="PriceSbac" class="control-label"></label>
-                <input asp-for="PriceSbac" class="form-control" />
-                <span asp-validation-for="PriceSbac" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="PriceMbac" class="control-label"></label>
-                <input asp-for="PriceMbac" class="form-control" />
-                <span asp-validation-for="PriceMbac" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="PriceLbac" class="control-label"></label>
-                <input asp-for="PriceLbac" class="form-control" />
-                <span asp-validation-for="PriceLbac" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="PriceSsal" class="control-label"></label>
-                <input asp-for="PriceSsal" class="form-control" />
-                <span asp-validation-for="PriceSsal" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="PriceMsal" class="control-label"></label>
-                <input asp-for="PriceMsal" class="form-control" />
-                <span asp-validation-for="PriceMsal" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="PriceLsal" class="control-label"></label>
-                <input asp-for="PriceLsal" class="form-control" />
-                <span asp-validation-for="PriceLsal" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="PriceSpep" class="control-label"></label>
-                <input asp-for="PriceSpep" class="form-control" />
-                <span asp-validation-for="PriceSpep" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="PriceMpep" class="control-label"></label>
-                <input asp-for="PriceMpep" class="form-control" />
-                <span asp-validation-for="PriceMpep" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="PriceLpep" class="control-label"></label>
-                <input asp-for="PriceLpep" class="form-control" />
-                <span asp-validation-for="PriceLpep" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="PriceSmus" class="control-label"></label>
-                <input asp-for="PriceSmus" class="form-control" />
-                <span asp-validation-for="PriceSmus" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="PriceMmus" class="control-label"></label>
-                <input asp-for="PriceMmus" class="form-control" />
-                <span asp-validation-for="PriceMmus" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="PriceLmus" class="control-label"></label>
-                <input asp-for="PriceLmus" class="form-control" />
-                <span asp-validation-for="PriceLmus" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="pizzaTypeBac" class="control-label"></label>
-                <input asp-for="pizzaTypeBac" class="form-control" />
-                <span asp-validation-for="pizzaTypeBac" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="pizzaTypeSal" class="control-label"></label>
-                <input asp-for="pizzaTypeSal" class="form-control" />
-                <span asp-validation-for="pizzaTypeSal" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="pizzaTypePep" class="control-label"></label>
-                <input asp-for="pizzaTypePep" class="form-control" />
-                <span asp-validation-for="pizzaTypePep" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="pizzaTypeMus" class="control-label"></label>
-                <input asp-for="pizzaTypeMus" class="form-control" />
-                <span asp-validation-for="pizzaTypeMus" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="customerId" class="control-label"></label>
-                <input asp-for="customerId" class="form-control" />
-                <span asp-validation-for="customerId" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="orderId" class="control-label"></label>
-                <input asp-for="orderId" class="form-control" />
-                <span asp-validation-for="orderId" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="cartId" class="control-label"></label>
-                <input asp-for="cartId" class="form-control" />
-                <span asp-validation-for="cartId" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="OrderDate" class="control-label"></label>
-                <input asp-for="OrderDate" class="form-control" />
-                <span asp-validation-for="OrderDate" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="totalPrice" class="control-label"></label>
-                <input asp-for="totalPrice" class="form-control" />
-                <span asp-validation-for="totalPrice" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
-            </div>
-        </form>
-    </div>
-</div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
+<form asp-action="CreateOrderPizza">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <div class="container-fluid">
+        <div class="m-md-4">
+            <div class="row">
+                <div class="col">
+                    <a @*asp-action="" asp-controller=""*@>
+                        <div class="box-img">
+                            <img src="~/Images/Margherita-500x500.jpg" />
+                        </div>
+                        <div class="box-text">
+                            <h3>Bacon V-MAN</h3>
+                        </div>
+                        <ul>
+                            <li>
+                                <p>Small: ($2)    <input asp-for="QtySbac" type="number" id="BacS" onclick="UpdatePrice();" value="0" /></p>
+                            </li>
+                            <li>
+                                <p>Medium: ($5) <input asp-for="QtyMbac" type="number" id="BacM" onclick="UpdatePrice();" value="0" /></p>
+                                @*<p>$3: <input type="checkbox"> <em>Medium</em></p>*@
+                            </li>
+                            <li>
+                                <p>Large: ($7) <input asp-for="QtyLbac" type="number" id="BacL" onclick="UpdatePrice();" value="0" /></p>
+                                @*<p>$5: <input type="checkbox"> <em>Large</em></p>*@
+                            </li>
+                        </ul>
+                    </a>
+                    @*<div>
+                            <button align="right" type="submit" id="BacAdd" onclick="addBacon();" class="btn btn-danger">Add Order</button>
+                        </div>*@
+                </div>
+                <div class="col">
+                    <a @*asp-action="" asp-controller=""*@>
+                        <div class="box-img">
+                            <img src="~/Images/Buffalo-Chicken-300x300.jpg" />
+                        </div>
+                        <div class="box-text">
+                            <h3>Salami V-MAN</h3>
+                        </div>
+                        <ul>
+                            <li>
+                                <p>Small: ($3) <input asp-for="QtySsal" type="number" id="SalS" onclick="UpdatePrice();" value="0" /></p>
+                            </li>
+                            <li>
+                                <p>Medium: ($6)<input asp-for="QtyMsal" type="number" id="SalM" onclick="UpdatePrice();" value="0" /></p>                      
+                            </li>
+                            <li>
+                                <p>Large: ($8) <input asp-for="QtyLsal" type="number" id="SalL" onclick="UpdatePrice();" value="0" /></p>
+                            </li>
+                        </ul>
+                    </a>
+                </div>
+                <div class="col">
+                    <a @*asp-action="" asp-controller=""*@>
+                        <div class="box-img">
+                            <img src="~/Images/Wild-Mushroom-500x500.jpg" />
+                        </div>
+                        <div class="box-text">
+                            <h3>Pepperoni V-MAN</h3>
+                        </div>
+                        <ul>
+                            <li>
+                                <p>Small: ($2)    <input asp-for="QtySpep" type="number" id="PepS" onclick="UpdatePrice();" value="0" /></p>
+                                @*<input type="checkbox" checked="checked"> <em>Small</em>:*@
+                            </li>
+                            <li>
+                                <p>Medium: ($5) <input asp-for="QtyMpep" type="number" id="PepM" onclick="UpdatePrice();" value="0" /></p>
+                                @*<p>$3: <input type="checkbox"> <em>Medium</em></p>*@
+                            </li>
+                            <li>
+                                <p>Large: ($7) <input asp-for="QtyLpep" type="number" id="PepL" onclick="UpdatePrice();" value="0" /></p>
+                                @*<p>$5: <input type="checkbox"> <em>Large</em></p>*@
+                            </li>
+                        </ul>
+                    </a>
+                    @*<div>
+                            <button align="right" type="submit" id="PepAdd" onclick="addPepperoni();" class="btn btn-danger">Add Order</button>
+                        </div>*@
+                </div>
+                <div class="col">
+                    <a>
+                        <div class="box-img">
+                            <img src="~/Images/mushroom.jpg" />
+                        </div>
+                        <div class="box-text">
+                            <h3>Mushroom V-MAN</h3>
+                        </div>
+                        <ul>
+                            <li>
+                                <p>Small: ($2)    :<input asp-for="QtySmus" type="number" id="MusS" onclick="UpdatePrice();" value="0" /></p>
+                            </li>
+                            <li>
+                                <p>Medium: ($4) :<input asp-for="QtyMmus" type="number" id="MusM" onclick="UpdatePrice();" value="0" /></p>
+
+                            </li>
+                            <li>
+                                <p>Large: ($6) :<input asp-for="QtyLmus" type="number" id="MusL" onclick="UpdatePrice();" value="0" /></p>
+
+                            </li>
+                        </ul>
+                    </a>
+                    @*<div>
+                            <button align="right" type="submit" id="MusAdd" onclick="addMushroom();" class="btn btn-danger">Add Order</button>
+                        </div>*@
+                </div>
+                <div class="col">
+                    <a @*asp-action="" asp-controller=""*@>
+                        <div class="box-img">
+                            <img src="~/Images/pepperoni pizza-800x800.png" />
+                        </div>
+                        <div class="box-text">
+                            <h3>Cheese V-MAN</h3>
+                        </div>
+                        <ul>
+                            <li>
+                                <p>Small: ($2)    <input asp-for="QtySche" type="number" id="CheS" onclick="UpdatePrice();" value="0" /></p>
+                                @*<input type="checkbox" checked="checked"> <em>Small</em>:*@
+                            </li>
+                            <li>
+                                <p>Medium: ($5) <input asp-for="QtyMche" type="number" id="CheM" onclick="UpdatePrice();" value="0" /></p>
+                                @*<p>$3: <input type="checkbox"> <em>Medium</em></p>*@
+                            </li>
+                            <li>
+                                <p>Large: ($7) <input asp-for="QtyLche" type="number" id="CheL" onclick="UpdatePrice();" value="0" /></p>
+                                @*<p>$5: <input type="checkbox"> <em>Large</em></p>*@
+                            </li>
+                        </ul>
+                    </a>
+                    @*<div>
+                            <button align="right" type="submit" id="PepAdd" onclick="addPepperoni();" class="btn btn-danger">Add Order</button>
+                        </div>*@
+                </div>
+                <div class="col">
+                    <a @*asp-action="" asp-controller=""*@>
+                        <div class="box-img">
+                            <img src="~/Images/original_bocce.jpg" />
+                        </div>
+                        <div class="box-text">
+                            <h3>Chicken V-MAN</h3>
+                        </div>
+                        <ul>
+                            <li>
+                                <p>Small: ($2)    <input asp-for="QtySchk" type="number" id="ChkS" onclick="UpdatePrice();" value="0" /></p>
+                                @*<input type="checkbox" checked="checked"> <em>Small</em>:*@
+                            </li>
+                            <li>
+                                <p>Medium: ($5) <input asp-for="QtyMchk" type="number" id="ChkM" onclick="UpdatePrice();" value="0" /></p>
+                                @*<p>$3: <input type="checkbox"> <em>Medium</em></p>*@
+                            </li>
+                            <li>
+                                <p>Large: ($7) <input asp-for="QtyLchk" type="number" id="ChkL" onclick="UpdatePrice();" value="0" /></p>
+                                @*<p>$5: <input type="checkbox"> <em>Large</em></p>*@
+                            </li>
+                        </ul>
+                    </a>
+                    @*<div>
+                            <button align="right" type="submit" id="PepAdd" onclick="addPepperoni();" class="btn btn-danger">Add Order</button>
+                        </div>*@
+                </div>
+            </div>
+        </div>
+    </div>
+    @*<div class="float-right">*@
+    <div>
+        <span>Total Price: $</span>
+        <input type="text" id="totP" name="fname">
+    </div>
+    <div class="form-group">
+        <input type="submit" value="Create" class="btn btn-danger" />
+    </div>
+    @*</div>*@
+</form>
+
+@*<div>
+        <a asp-action="Index">Back to List</a>
+    </div>*@
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
