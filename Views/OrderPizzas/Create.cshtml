@@ -10,28 +10,42 @@
             var BacM = parseFloat(+document.getElementById("BacM").value);
             var BacL = parseFloat(+document.getElementById("BacL").value);
 
-            document.getElementById("totP").value = parseFloat(+document.getElementById("totP").value) + ((BacS * 2) + (BacM * 5) + (BacL * 7));
+            document.getElementById("totP").value = parseFloat(+document.getElementById("totP").value) + ((BacS * 8) + (BacM * 12) + (BacL * 17));
         }
         function addPepperoni() {
             var PepS = parseFloat(+document.getElementById("PepS").value);
             var PepM = parseFloat(+document.getElementById("PepM").value);
             var PepL = parseFloat(+document.getElementById("PepL").value);
 
-            document.getElementById("totP").value = parseFloat(+document.getElementById("totP").value) + ((PepS * 2) + (PepM * 5) + (PepL * 7));
+            document.getElementById("totP").value = parseFloat(+document.getElementById("totP").value) + ((PepS * 7) + (PepM * 11) + (PepL * 14));
         }
         function addSalami() {
             var SalS = parseFloat(+document.getElementById("SalS").value);
             var SalM = parseFloat(+document.getElementById("SalM").value);
             var SalL = parseFloat(+document.getElementById("SalL").value);
 
-            document.getElementById("totP").value = parseFloat(+document.getElementById("totP").value) + ((SalS * 2) + (SalM * 5) + (SalL * 7));
+            document.getElementById("totP").value = parseFloat(+document.getElementById("totP").value) + ((SalS * 11) + (SalM * 16) + (SalL * 19));
         }
         function addMushroom() {
             var MusS = parseFloat(+document.getElementById("MusS").value);
             var MusM = parseFloat(+document.getElementById("MusM").value);
             var MusL = parseFloat(+document.getElementById("MusL").value);
 
-            document.getElementById("totP").value = parseFloat(+document.getElementById("totP").value) + ((MusS * 2) + (MusM * 5) + (MusL * 7));
+            document.getElementById("totP").value = parseFloat(+document.getElementById("totP").value) + ((MusS * 10) + (MusM * 14) + (MusL * 17));
+        }
+        function addCheese() {
+            var CheS = parseFloat(+document.getElementById("CheS").value);
+            var CheM = parseFloat(+document.getElementById("CheM").value);
+            var CheL = parseFloat(+document.getElementById("CheL").value);
+
+            document.getElementById("totP").value = parseFloat(+document.getElementById("totP").value) + ((CheS * 5) + (CheM * 10) + (CheL * 12));
+        }
+        function addChicken() {
+            var ChkS = parseFloat(+document.getElementById("ChkS").value);
+            var ChkM = parseFloat(+document.getElementById("ChkM").value);
+            var ChkL = parseFloat(+document.getElementById("ChkL").value);
+
+            document.getElementById("totP").value = parseFloat(+document.getElementById("totP").value) + ((ChkS * 10) + (ChkM * 14) + (ChkL * 18));
         }
          function UpdatePrice() {
             var MusS = parseFloat(+document.getElementById("MusS").value);
@@ -46,7 +60,13 @@
              var BacS = parseFloat(+document.getElementById("BacS").value);
             var BacM = parseFloat(+document.getElementById("BacM").value);
             var BacL = parseFloat(+document.getElementById("BacL").value);
-            document.getElementById("totP").value = ((MusS * 2) + (MusM * 4) + (MusL * 6)) +((BacS * 2) + (BacM * 5) + (BacL * 7)) + ((PepS * 2) + (PepM * 5) + (PepL * 7)) +((SalS * 3) + (SalM * 6) + (SalL * 8));
+             var CheS = parseFloat(+document.getElementById("CheS").value);
+            var CheM = parseFloat(+document.getElementById("CheM").value);
+            var CheL = parseFloat(+document.getElementById("CheL").value);
+             var ChkS = parseFloat(+document.getElementById("ChkS").value);
+            var ChkM = parseFloat(+document.getElementById("ChkM").value);
+            var ChkL = parseFloat(+document.getElementById("ChkL").value);
+            document.getElementById("totP").value = ((MusS * 10) + (MusM * 14) + (MusL * 17)) +((BacS * 8) + (BacM * 12) + (BacL * 17)) + ((PepS * 7) + (PepM * 11) + (PepL * 14)) +((SalS * 11) + (SalM * 16) + (SalL * 19)) +((CheS * 5) + (CheM * 10) + (CheL * 12)) +((ChkS * 10) + (ChkM * 14) + (ChkL * 18));
         }
     </script>
 </head>
@@ -66,21 +86,21 @@
                 <div class="col">
                     <a @*asp-action="" asp-controller=""*@>
                         <div class="box-img">
-                            <img src="~/Images/Bronx-Bomber-379.2X379.2.jpg" />
+                            <img src="~/Images/Margherita-500x500.jpg" />
                         </div>
                         <div class="box-text">
-                            <p>Bacon V-MAN</p>
+                            <h3>Bacon V-MAN</h3>
                         </div>
                         <ul>
                             <li>
-                                <p>Small: ($2)    <input asp-for="QtySbac" type="number" id="BacS" onclick="UpdatePrice();" value="0" /></p>
+                                <p>Small: ($8)    <input asp-for="QtySbac" type="number" id="BacS" onclick="UpdatePrice();" value="0" /></p>
                             </li>
                             <li>
-                                <p>Medium: ($5) <input asp-validation-for="QtyMbac" type="number" id="BacM" onclick="UpdatePrice();" value="0" /></p>
+                                <p>Medium: ($12) <input asp-validation-for="QtyMbac" type="number" id="BacM" onclick="UpdatePrice();" value="0" /></p>
                                 @*<p>$3: <input type="checkbox"> <em>Medium</em></p>*@
                             </li>
                             <li>
-                                <p>Large: ($7) <input asp-for="QtyLbac" type="number" id="BacL" onclick="UpdatePrice();" value="0" /></p>
+                                <p>Large: ($17) <input asp-for="QtyLbac" type="number" id="BacL" onclick="UpdatePrice();" value="0" /></p>
                                 @*<p>$5: <input type="checkbox"> <em>Large</em></p>*@
                             </li>
                         </ul>
@@ -95,18 +115,18 @@
                             <img src="~/Images/Buffalo-Chicken-300x300.jpg" />
                         </div>
                         <div class="box-text">
-                            <p>Salami V-MAN</p>
+                            <h3>Salami V-MAN</h3>
                         </div>
                         <ul>
                             <li>
-                                <p>Small: ($3)    @*<input type="checkbox" checked="checked"> <em>Small</em>:*@ <input asp-for="QtySsal" type="number" id="SalS" onclick="UpdatePrice();" value="0" /></p>
+                                <p>Small: ($11)    @*<input type="checkbox" checked="checked"> <em>Small</em>:*@ <input asp-for="QtySsal" type="number" id="SalS" onclick="UpdatePrice();" value="0" /></p>
                             </li>
                             <li>
-                                <p>Medium: ($6)<input asp-for="QtyMsal" type="number" id="SalM" onclick="UpdatePrice();" value="0" /></p>
+                                <p>Medium: ($16)<input asp-for="QtyMsal" type="number" id="SalM" onclick="UpdatePrice();" value="0" /></p>
                                 @*<p>$3: <input type="checkbox"> <em>Medium</em></p>*@
                             </li>
                             <li>
-                                <p>Large: ($8) <input asp-for="QtyLsal" type="number" id="SalL" onclick="UpdatePrice();" value="0" /></p>
+                                <p>Large: ($19) <input asp-for="QtyLsal" type="number" id="SalL" onclick="UpdatePrice();" value="0" /></p>
                                 @*<p>$5: <input type="checkbox"> <em>Large</em></p>*@
                             </li>
                         </ul>
@@ -118,22 +138,22 @@
                 <div class="col">
                     <a @*asp-action="" asp-controller=""*@>
                         <div class="box-img">
-                            <img src="~/Images/Margherita-500x500.jpg" />
+                            <img src="~/Images/Wild-Mushroom-500x500.jpg" />
                         </div>
                         <div class="box-text">
-                            <p>Pepperoni V-MAN</p>
+                            <h3>Pepperoni V-MAN</h3>
                         </div>
                         <ul>
                             <li>
-                                <p>Small: ($2)    <input asp-for="QtySpep" type="number" id="PepS" onclick="UpdatePrice();" value="0" /></p>
+                                <p>Small: ($7)    <input asp-for="QtySpep" type="number" id="PepS" onclick="UpdatePrice();" value="0" /></p>
                                 @*<input type="checkbox" checked="checked"> <em>Small</em>:*@
                             </li>
                             <li>
-                                <p>Medium: ($5) <input asp-for="QtyMpep" type="number" id="PepM" onclick="UpdatePrice();" value="0" /></p>
+                                <p>Medium: ($11) <input asp-for="QtyMpep" type="number" id="PepM" onclick="UpdatePrice();" value="0" /></p>
                                 @*<p>$3: <input type="checkbox"> <em>Medium</em></p>*@
                             </li>
                             <li>
-                                <p>Large: ($7) <input asp-for="QtyLpep" type="number" id="PepL" onclick="UpdatePrice();" value="0" /></p>
+                                <p>Large: ($14) <input asp-for="QtyLpep" type="number" id="PepL" onclick="UpdatePrice();" value="0" /></p>
                                 @*<p>$5: <input type="checkbox"> <em>Large</em></p>*@
                             </li>
                         </ul>
@@ -145,21 +165,21 @@
                 <div class="col">
                     <a>
                         <div class="box-img">
-                            <img src="~/Images/Wild-Mushroom-500x500.jpg" />
+                            <img src="~/Images/mushroom.jpg" />
                         </div>
                         <div class="box-text">
-                            <p>Mushroom V-MAN</p>
+                            <h3>Mushroom V-MAN</h3>
                         </div>
                         <ul>
                             <li>
-                                <p>Small: ($2)    Qty:<input asp-for="QtySmus" type="number" id="MusS" onclick="UpdatePrice();" value="0" /></p>
+                                <p>Small: ($10)    :<input asp-for="QtySmus" type="number" id="MusS" onclick="UpdatePrice();" value="0" /></p>
                             </li>
                             <li>
-                                <p>Medium: ($4) Qty:<input asp-for="QtyMmus" type="number" id="MusM" onclick="UpdatePrice();" value="0" /></p>
+                                <p>Medium: ($14) :<input asp-for="QtyMmus" type="number" id="MusM" onclick="UpdatePrice();" value="0" /></p>
 
                             </li>
                             <li>
-                                <p>Large: ($6) Qty:<input asp-for="QtyLmus" type="number" id="MusL" onclick="UpdatePrice();" value="0" /></p>
+                                <p>Large: ($17) :<input asp-for="QtyLmus" type="number" id="MusL" onclick="UpdatePrice();" value="0" /></p>
 
                             </li>
                         </ul>
@@ -171,22 +191,22 @@
                 <div class="col">
                     <a @*asp-action="" asp-controller=""*@>
                         <div class="box-img">
-                            <img src="~/Images/Margherita-500x500.jpg" />
+                            <img src="~/Images/pepperoni pizza-800x800.png" />
                         </div>
                         <div class="box-text">
-                            <p>Pepperoni V-MAN</p>
+                            <h3>Cheese V-MAN</h3>
                         </div>
                         <ul>
                             <li>
-                                <p>Small: ($2)    <input asp-for="QtySpep" type="number" id="PepS" onclick="UpdatePrice();" value="0" /></p>
+                                <p>Small: ($5)    <input asp-for="QtySche" type="number" id="CheS" onclick="UpdatePrice();" value="0" /></p>
                                 @*<input type="checkbox" checked="checked"> <em>Small</em>:*@
                             </li>
                             <li>
-                                <p>Medium: ($5) <input asp-for="QtyMpep" type="number" id="PepM" onclick="UpdatePrice();" value="0" /></p>
+                                <p>Medium: ($10) <input asp-for="QtyMche" type="number" id="CheM" onclick="UpdatePrice();" value="0" /></p>
                                 @*<p>$3: <input type="checkbox"> <em>Medium</em></p>*@
                             </li>
                             <li>
-                                <p>Large: ($7) <input asp-for="QtyLpep" type="number" id="PepL" onclick="UpdatePrice();" value="0" /></p>
+                                <p>Large: ($12) <input asp-for="QtyLche" type="number" id="CheL" onclick="UpdatePrice();" value="0" /></p>
                                 @*<p>$5: <input type="checkbox"> <em>Large</em></p>*@
                             </li>
                         </ul>
@@ -198,22 +218,22 @@
                 <div class="col">
                     <a @*asp-action="" asp-controller=""*@>
                         <div class="box-img">
-                            <img src="~/Images/Margherita-500x500.jpg" />
+                            <img src="~/Images/original_bocce.jpg" />
                         </div>
                         <div class="box-text">
-                            <p>Pepperoni V-MAN</p>
+                            <h3>Chicken V-MAN</h3>
                         </div>
                         <ul>
                             <li>
-                                <p>Small: ($2)    <input asp-for="QtySpep" type="number" id="PepS" onclick="UpdatePrice();" value="0" /></p>
+                                <p>Small: ($10)    <input asp-for="QtySchk" type="number" id="ChkS" onclick="UpdatePrice();" value="0" /></p>
                                 @*<input type="checkbox" checked="checked"> <em>Small</em>:*@
                             </li>
                             <li>
-                                <p>Medium: ($5) <input asp-for="QtyMpep" type="number" id="PepM" onclick="UpdatePrice();" value="0" /></p>
+                                <p>Medium: ($14) <input asp-for="QtyMchk" type="number" id="ChkM" onclick="UpdatePrice();" value="0" /></p>
                                 @*<p>$3: <input type="checkbox"> <em>Medium</em></p>*@
                             </li>
                             <li>
-                                <p>Large: ($7) <input asp-for="QtyLpep" type="number" id="PepL" onclick="UpdatePrice();" value="0" /></p>
+                                <p>Large: ($18) <input asp-for="QtyLchk" type="number" id="ChkL" onclick="UpdatePrice();" value="0" /></p>
                                 @*<p>$5: <input type="checkbox"> <em>Large</em></p>*@
                             </li>
                         </ul>
@@ -225,19 +245,20 @@
             </div>
         </div>
     </div>
-    <br />
-    <div>
-        <span>Total Price: $</span>
-        <input type="text" id="totP" name="fname">
-    </div>
-    <div class="form-group">
-        <input type="submit" value="Create" class="btn btn-danger" />
-    </div>
+    @*<div class="float-right">*@
+        <div>
+            <span>Total Price: $</span>
+            <input type="text" id="totP" name="fname">
+        </div>
+        <div class="form-group">
+            <input type="submit" value="Create" class="btn btn-danger" />
+        </div>
+    @*</div>*@
 </form>
 
-<div>
+@*<div>
     <a asp-action="Index">Back to List</a>
-</div>
+</div>*@
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}

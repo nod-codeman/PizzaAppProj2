@@ -28,7 +28,11 @@
 
   <ItemGroup>
     <Folder Include="Connected Services\" />
+<<<<<<< HEAD
     <Folder Include="ApiController\" />
+=======
+    <Folder Include="wwwroot\" />
+>>>>>>> f5acdc3e5eb7bd1d1beecca628603c976d5a9906
   </ItemGroup>
 
 </Project>
