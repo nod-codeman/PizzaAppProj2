@@ -49,6 +49,24 @@
                 @Html.DisplayNameFor(model => model.QtyLmus)
             </th>
             <th>
+                @Html.DisplayNameFor(model => model.QtySche)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.QtyMche)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.QtyLche)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.QtySchk)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.QtyMchk)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.QtyLchk)
+            </th>
+            <th>
                 @Html.DisplayNameFor(model => model.customerId)
             </th>
             <th>
@@ -58,7 +76,8 @@
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
+        @foreach (var item in Model)
+        {
         <tr>
             <td>
                 @Html.DisplayFor(modelItem => item.QtySbac)
@@ -97,6 +116,24 @@
                 @Html.DisplayFor(modelItem => item.QtyLmus)
             </td>
             <td>
+                @Html.DisplayFor(modelItem => item.QtySche)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.QtyMche)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.QtyLche)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.QtySchk)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.QtyMchk)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.QtyLchk)
+            </td>
+            <td>
                 @Html.DisplayFor(modelItem => item.customerId)
             </td>
             <td>
@@ -108,6 +145,7 @@
                 <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
             </td>
         </tr>
-}
+        }
     </tbody>
 </table>
+

@@ -80,6 +80,41 @@ namespace VMANpizza.BL
 
             Repository.Restore(mushroom);
 
+            Pizza cheese = new Pizza();
+            cheese.PizzaType = "Cheese";
+            cheese.PriceS = 2;
+            cheese.PriceM = 4;
+            cheese.PriceL = 6;
+            double csq;
+            double.TryParse(newOrder["QtySche"], out csq);
+            cheese.QtyS = csq;
+            double cmq;
+            double.TryParse(newOrder["QtyMche"], out cmq);
+            cheese.QtyM = cmq;
+            double clq;
+            double.TryParse(newOrder["QtyLche"], out clq);
+            cheese.QtyL = clq;
+
+            Repository.Restore(cheese);
+
+
+
+            Pizza chicken = new Pizza();
+            chicken.PizzaType = "Chicken";
+            chicken.PriceS = 2;
+            chicken.PriceM = 4;
+            chicken.PriceL = 6;
+            double cksq;
+            double.TryParse(newOrder["QtySchk"], out cksq);
+            chicken.QtyS = cksq;
+            double ckmq;
+            double.TryParse(newOrder["QtyMchk"], out ckmq);
+            chicken.QtyM = ckmq;
+            double cklq;
+            double.TryParse(newOrder["QtyLche"], out cklq);
+            chicken.QtyL = cklq;
+
+            Repository.Restore(chicken);
         }
     }
 }
