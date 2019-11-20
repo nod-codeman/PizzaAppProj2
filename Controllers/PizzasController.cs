@@ -6,16 +6,17 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using VMANpizza.Models;
+using VMANpizza.Repository;
 
 namespace VMANpizza.Controllers
 {
     public class PizzasController : Controller
     {
-        private readonly AppDbContext _context;
+        private readonly IPizzarepo _repo;
 
-        public PizzasController(AppDbContext context)
+        public PizzasController(IPizzarepo repo)
         {
-            _context = context;
+            _repo = repo;
         }
 
         // GET: Pizzas
@@ -24,7 +25,7 @@ namespace VMANpizza.Controllers
             List<Pizza> Pizzas = new List<Pizza>();
             Pizza pizza = new Pizza();
             //pizza.PizzaType = 
-            return View(await _context.Pizzas.ToListAsync());
+            return View(await _repo.Get());
         }
 
         // GET: Pizzas/Details/5
@@ -35,8 +36,7 @@ namespace VMANpizza.Controllers
                 return NotFound();
             }
 
-            var pizza = await _context.Pizzas
-                .FirstOrDefaultAsync(m => m.Id == id);
+            var pizza = await _repo.Get(id);
             if (pizza == null)
             {
                 return NotFound();
@@ -60,8 +60,8 @@ namespace VMANpizza.Controllers
         {
             if (ModelState.IsValid)
             {
-                _context.Add(pizza);
-                await _context.SaveChangesAsync();
+                
+                await _repo.Create(pizza);
                 return RedirectToAction(nameof(Index));
             }
             return View(pizza);
@@ -75,7 +75,7 @@ namespace VMANpizza.Controllers
                 return NotFound();
             }
 
-            var pizza = await _context.Pizzas.FindAsync(id);
+            var pizza = await _repo.Get(id);
             if (pizza == null)
             {
                 return NotFound();
@@ -99,8 +99,8 @@ namespace VMANpizza.Controllers
             {
                 try
                 {
-                    _context.Update(pizza);
-                    await _context.SaveChangesAsync();
+                    
+                    await _repo.Edit(id, pizza);
                 }
                 catch (DbUpdateConcurrencyException)
                 {
@@ -126,8 +126,7 @@ namespace VMANpizza.Controllers
                 return NotFound();
             }
 
-            var pizza = await _context.Pizzas
-                .FirstOrDefaultAsync(m => m.Id == id);
+            var pizza = await _repo.Get(id);
             if (pizza == null)
             {
                 return NotFound();
@@ -141,20 +140,19 @@ namespace VMANpizza.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var pizza = await _context.Pizzas.FindAsync(id);
-            _context.Pizzas.Remove(pizza);
-            await _context.SaveChangesAsync();
+            
+            await _repo.Delete(id);
             return RedirectToAction(nameof(Index));
         }
 
         private bool PizzaExists(int id)
         {
-            return _context.Pizzas.Any(e => e.Id == id);
+            return _repo.PizzaExists(id);
         }
 
         public IActionResult ConfirmOrderPizza(List<Pizza> PizzasList)
         {
-
+            
             return View(PizzasList);
         }
     }

@@ -45,7 +45,7 @@ namespace VMANpizza.Repository
             return pizzas;
         }
 
-        public async Task<Pizza> Get(int id)
+        public async Task<Pizza> Get(int? id)
         {
            var pizza = await _context.Pizzas.FirstOrDefaultAsync(p => p.Id == id);
 
