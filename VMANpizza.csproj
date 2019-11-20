@@ -25,6 +25,7 @@
 
   <ItemGroup>
     <Folder Include="Connected Services\" />
+    <Folder Include="wwwroot\" />
   </ItemGroup>
 
 </Project>
