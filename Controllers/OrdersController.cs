@@ -7,22 +7,23 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using VMANpizza.Models;
 using VMANpizza.Models.ViewModel;
+using VMANpizza.Repository;
 
 namespace VMANpizza.Controllers
 {
     public class OrdersController : Controller
     {
-        private readonly AppDbContext _context;
+        private readonly IOrderRepo _repo;
 
-        public OrdersController(AppDbContext context)
+        public OrdersController(IOrderRepo repo)
         {
-            _context = context;
+            _repo = repo;
         }
 
         // GET: Orders
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Orders.ToListAsync());
+            return View(await _repo.Get());
         }
 
         // GET: Orders/Details/5
@@ -33,8 +34,7 @@ namespace VMANpizza.Controllers
                 return NotFound();
             }
 
-            var order = await _context.Orders
-                .FirstOrDefaultAsync(m => m.Id == id);
+            var order = await _repo.Get(id);
             if (order == null)
             {
                 return NotFound();
@@ -58,8 +58,8 @@ namespace VMANpizza.Controllers
         {
             if (ModelState.IsValid)
             {
-                _context.Add(order);
-                await _context.SaveChangesAsync();
+                
+                await _repo.Create(order);
                 return RedirectToAction(nameof(Index));
             }
             return View(order);
@@ -73,7 +73,7 @@ namespace VMANpizza.Controllers
                 return NotFound();
             }
 
-            var order = await _context.Orders.FindAsync(id);
+            var order = await _repo.Get(id);
             if (order == null)
             {
                 return NotFound();
@@ -97,8 +97,8 @@ namespace VMANpizza.Controllers
             {
                 try
                 {
-                    _context.Update(order);
-                    await _context.SaveChangesAsync();
+                    
+                    await _repo.Edit(id, order);
                 }
                 catch (DbUpdateConcurrencyException)
                 {
@@ -124,8 +124,7 @@ namespace VMANpizza.Controllers
                 return NotFound();
             }
 
-            var order = await _context.Orders
-                .FirstOrDefaultAsync(m => m.Id == id);
+            var order = await _repo.Get(id);
             if (order == null)
             {
                 return NotFound();
@@ -139,15 +138,14 @@ namespace VMANpizza.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var order = await _context.Orders.FindAsync(id);
-            _context.Orders.Remove(order);
-            await _context.SaveChangesAsync();
+            await _repo.Delete(id);
+
             return RedirectToAction(nameof(Index));
         }
 
         private bool OrderExists(int id)
         {
-            return _context.Orders.Any(e => e.Id == id);
+            return _repo.OrderExists(id);
         }
 
         public IActionResult ConfirmOrder(List<Pizza> PizzasList)
