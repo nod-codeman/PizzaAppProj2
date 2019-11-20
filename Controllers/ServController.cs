@@ -27,14 +27,8 @@ namespace VMANpizza.Controllers
         [HttpPost]
         public IActionResult PostOrder([FromForm] IFormCollection form)
         {
-
-
-
             Pricing register = new Pricing();
-
             register.TotalPrice(form);
-
-
             return RedirectToAction("Details", "OrderPizzas");
         }
     
