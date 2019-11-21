@@ -10,7 +10,7 @@ using VMANpizza.Models;
 namespace VMANpizza.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20191116033805_Init")]
+    [Migration("20191120230926_Init")]
     partial class Init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -20,24 +20,6 @@ namespace VMANpizza.Migrations
                 .HasAnnotation("ProductVersion", "3.0.0")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-            modelBuilder.Entity("VMANpizza.Models.Cart", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<int>("CustomerId")
-                        .HasColumnType("int");
-
-                    b.Property<double>("totalPrice")
-                        .HasColumnType("float");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Carts");
-                });
 
             modelBuilder.Entity("VMANpizza.Models.Customer", b =>
                 {
@@ -103,24 +85,22 @@ namespace VMANpizza.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int>("CartId")
-                        .HasColumnType("int");
-
                     b.Property<int>("OrderId")
                         .HasColumnType("int");
 
                     b.Property<string>("PizzaType")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<double>("Qty")
+                    b.Property<double>("QtyL")
                         .HasColumnType("float");
 
-                    b.Property<string>("Size")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<double>("QtyM")
+                        .HasColumnType("float");
+
+                    b.Property<double>("QtyS")
+                        .HasColumnType("float");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("CartId");
 
                     b.HasIndex("OrderId");
 
@@ -138,12 +118,6 @@ namespace VMANpizza.Migrations
 
             modelBuilder.Entity("VMANpizza.Models.Pizza", b =>
                 {
-                    b.HasOne("VMANpizza.Models.Cart", null)
-                        .WithMany("Pizzas")
-                        .HasForeignKey("CartId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.HasOne("VMANpizza.Models.Order", null)
                         .WithMany("Pizzas")
                         .HasForeignKey("OrderId")

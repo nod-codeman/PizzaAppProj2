@@ -19,24 +19,6 @@ namespace VMANpizza.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("VMANpizza.Models.Cart", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<int>("CustomerId")
-                        .HasColumnType("int");
-
-                    b.Property<double>("totalPrice")
-                        .HasColumnType("float");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Carts");
-                });
-
             modelBuilder.Entity("VMANpizza.Models.Customer", b =>
                 {
                     b.Property<int>("Id")
@@ -101,9 +83,6 @@ namespace VMANpizza.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int>("CartId")
-                        .HasColumnType("int");
-
                     b.Property<int>("OrderId")
                         .HasColumnType("int");
 
@@ -121,236 +100,9 @@ namespace VMANpizza.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("CartId");
-
                     b.HasIndex("OrderId");
 
                     b.ToTable("Pizzas");
-                });
-
-            modelBuilder.Entity("VMANpizza.Models.ViewModel.OrderPizza", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<double>("QtyLbac")
-                        .HasColumnType("float");
-
-                    b.Property<double>("QtyLche")
-                        .HasColumnType("float");
-
-                    b.Property<double>("QtyLchk")
-                        .HasColumnType("float");
-
-                    b.Property<double>("QtyLmus")
-                        .HasColumnType("float");
-
-                    b.Property<double>("QtyLpep")
-                        .HasColumnType("float");
-
-                    b.Property<double>("QtyLsal")
-                        .HasColumnType("float");
-
-                    b.Property<double>("QtyMbac")
-                        .HasColumnType("float");
-
-                    b.Property<double>("QtyMche")
-                        .HasColumnType("float");
-
-                    b.Property<double>("QtyMchk")
-                        .HasColumnType("float");
-
-                    b.Property<double>("QtyMmus")
-                        .HasColumnType("float");
-
-                    b.Property<double>("QtyMpep")
-                        .HasColumnType("float");
-
-                    b.Property<double>("QtyMsal")
-                        .HasColumnType("float");
-
-                    b.Property<double>("QtySbac")
-                        .HasColumnType("float");
-
-                    b.Property<double>("QtySche")
-                        .HasColumnType("float");
-
-                    b.Property<double>("QtySchk")
-                        .HasColumnType("float");
-
-                    b.Property<double>("QtySmus")
-                        .HasColumnType("float");
-
-                    b.Property<double>("QtySpep")
-                        .HasColumnType("float");
-
-                    b.Property<double>("QtySsal")
-                        .HasColumnType("float");
-
-                    b.Property<int>("customerId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("orderId")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("OrderPizza");
-                });
-
-            modelBuilder.Entity("VMANpizza.Models.ViewModel.OrderPizzaCustomer", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<DateTime>("OrderDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<double>("PriceLbac")
-                        .HasColumnType("float");
-
-                    b.Property<double>("PriceLche")
-                        .HasColumnType("float");
-
-                    b.Property<double>("PriceLchk")
-                        .HasColumnType("float");
-
-                    b.Property<double>("PriceLmus")
-                        .HasColumnType("float");
-
-                    b.Property<double>("PriceLpep")
-                        .HasColumnType("float");
-
-                    b.Property<double>("PriceLsal")
-                        .HasColumnType("float");
-
-                    b.Property<double>("PriceMbac")
-                        .HasColumnType("float");
-
-                    b.Property<double>("PriceMche")
-                        .HasColumnType("float");
-
-                    b.Property<double>("PriceMchk")
-                        .HasColumnType("float");
-
-                    b.Property<double>("PriceMmus")
-                        .HasColumnType("float");
-
-                    b.Property<double>("PriceMpep")
-                        .HasColumnType("float");
-
-                    b.Property<double>("PriceMsal")
-                        .HasColumnType("float");
-
-                    b.Property<double>("PriceSbac")
-                        .HasColumnType("float");
-
-                    b.Property<double>("PriceSche")
-                        .HasColumnType("float");
-
-                    b.Property<double>("PriceSchk")
-                        .HasColumnType("float");
-
-                    b.Property<double>("PriceSmus")
-                        .HasColumnType("float");
-
-                    b.Property<double>("PriceSpep")
-                        .HasColumnType("float");
-
-                    b.Property<double>("PriceSsal")
-                        .HasColumnType("float");
-
-                    b.Property<double>("QtyLbac")
-                        .HasColumnType("float");
-
-                    b.Property<double>("QtyLche")
-                        .HasColumnType("float");
-
-                    b.Property<double>("QtyLchk")
-                        .HasColumnType("float");
-
-                    b.Property<double>("QtyLmus")
-                        .HasColumnType("float");
-
-                    b.Property<double>("QtyLpep")
-                        .HasColumnType("float");
-
-                    b.Property<double>("QtyLsal")
-                        .HasColumnType("float");
-
-                    b.Property<double>("QtyMbac")
-                        .HasColumnType("float");
-
-                    b.Property<double>("QtyMche")
-                        .HasColumnType("float");
-
-                    b.Property<double>("QtyMchk")
-                        .HasColumnType("float");
-
-                    b.Property<double>("QtyMmus")
-                        .HasColumnType("float");
-
-                    b.Property<double>("QtyMpep")
-                        .HasColumnType("float");
-
-                    b.Property<double>("QtyMsal")
-                        .HasColumnType("float");
-
-                    b.Property<double>("QtySbac")
-                        .HasColumnType("float");
-
-                    b.Property<double>("QtySche")
-                        .HasColumnType("float");
-
-                    b.Property<double>("QtySchk")
-                        .HasColumnType("float");
-
-                    b.Property<double>("QtySmus")
-                        .HasColumnType("float");
-
-                    b.Property<double>("QtySpep")
-                        .HasColumnType("float");
-
-                    b.Property<double>("QtySsal")
-                        .HasColumnType("float");
-
-                    b.Property<int>("cartId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("customerId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("orderId")
-                        .HasColumnType("int");
-
-                    b.Property<string>("pizzaTypeBac")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("pizzaTypeChe")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("pizzaTypeChk")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("pizzaTypeMus")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("pizzaTypePep")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("pizzaTypeSal")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<double>("totalPrice")
-                        .HasColumnType("float");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("OrderPizzaCustomer");
                 });
 
             modelBuilder.Entity("VMANpizza.Models.Order", b =>
@@ -364,12 +116,6 @@ namespace VMANpizza.Migrations
 
             modelBuilder.Entity("VMANpizza.Models.Pizza", b =>
                 {
-                    b.HasOne("VMANpizza.Models.Cart", null)
-                        .WithMany("Pizzas")
-                        .HasForeignKey("CartId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.HasOne("VMANpizza.Models.Order", null)
                         .WithMany("Pizzas")
                         .HasForeignKey("OrderId")

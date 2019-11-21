@@ -72,7 +72,7 @@ namespace VMANpizza.Models.ViewModel
         #endregion
         public int customerId { get; set; }
         public int orderId { get; set; }
-        public int cartId { get; set; }
+        //public int cartId { get; set; }
         [DataType(DataType.Date)]
         public DateTime OrderDate { get; set; }
         public double totalPrice { get; set; }

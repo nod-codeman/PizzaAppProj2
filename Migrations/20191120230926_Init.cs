@@ -8,20 +8,6 @@ namespace VMANpizza.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "Carts",
-                columns: table => new
-                {
-                    Id = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    CustomerId = table.Column<int>(nullable: false),
-                    totalPrice = table.Column<double>(nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Carts", x => x.Id);
-                });
-
-            migrationBuilder.CreateTable(
                 name: "Customers",
                 columns: table => new
                 {
@@ -67,20 +53,14 @@ namespace VMANpizza.Migrations
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     PizzaType = table.Column<string>(nullable: true),
-                    Size = table.Column<string>(nullable: true),
-                    Qty = table.Column<double>(nullable: false),
-                    OrderId = table.Column<int>(nullable: false),
-                    CartId = table.Column<int>(nullable: false)
+                    QtyS = table.Column<double>(nullable: false),
+                    QtyM = table.Column<double>(nullable: false),
+                    QtyL = table.Column<double>(nullable: false),
+                    OrderId = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Pizzas", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_Pizzas_Carts_CartId",
-                        column: x => x.CartId,
-                        principalTable: "Carts",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_Pizzas_Orders_OrderId",
                         column: x => x.OrderId,
@@ -95,11 +75,6 @@ namespace VMANpizza.Migrations
                 column: "CustomerId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Pizzas_CartId",
-                table: "Pizzas",
-                column: "CartId");
-
-            migrationBuilder.CreateIndex(
                 name: "IX_Pizzas_OrderId",
                 table: "Pizzas",
                 column: "OrderId");
@@ -109,9 +84,6 @@ namespace VMANpizza.Migrations
         {
             migrationBuilder.DropTable(
                 name: "Pizzas");
-
-            migrationBuilder.DropTable(
-                name: "Carts");
 
             migrationBuilder.DropTable(
                 name: "Orders");

@@ -21,19 +21,16 @@ namespace VMANpizza.Controllers
         }
 
         // GET: OrderPizzas
-        public async Task<IActionResult> Index()
-        {
-            return View(await _context.OrderPizza.ToListAsync());
-        }
+       
 
         // GET: OrderPizzas/Details/5
         public async Task<IActionResult> Details()
         {
 
             var PizzasList = Repository.GetPizzas();
-            
 
-            return View("Views/Pizzas/ConfirmOrderPizza.cshtml", PizzasList);
+            return View("Views/OrderPizzaCustomers/CreateOrderPizza.cshtml", PizzasList);
+            //return View("Views/Pizzas/ConfirmOrderPizza.cshtml", PizzasList);
         }
 
         // GET: OrderPizzas/Create
@@ -190,90 +187,15 @@ namespace VMANpizza.Controllers
         }
 
         // GET: OrderPizzas/Edit/5
-        public async Task<IActionResult> Edit(int? id)
-        {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            var orderPizza = await _context.OrderPizza.FindAsync(id);
-            if (orderPizza == null)
-            {
-                return NotFound();
-            }
-            return View(orderPizza);
-        }
+       
 
         // POST: OrderPizzas/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,QtySbac,QtyMbac,QtyLbac,QtySsal,QtyMsal,QtyLsal,QtySpep,QtyMpep,QtyLpep,QtySmus,QtyMmus,QtyLmus,customerId,orderId")] OrderPizza orderPizza)
-        {
-            if (id != orderPizza.Id)
-            {
-                return NotFound();
-            }
+   
 
-            if (ModelState.IsValid)
-            {
-                try
-                {
-                    _context.Update(orderPizza);
-                    await _context.SaveChangesAsync();
-                }
-                catch (DbUpdateConcurrencyException)
-                {
-                    if (!OrderPizzaExists(orderPizza.Id))
-                    {
-                        return NotFound();
-                    }
-                    else
-                    {
-                        throw;
-                    }
-                }
-                return RedirectToAction(nameof(Index));
-            }
-            return View(orderPizza);
-        }
 
-        // GET: OrderPizzas/Delete/5
-        public async Task<IActionResult> Delete(int? id)
-        {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            var orderPizza = await _context.OrderPizza
-                .FirstOrDefaultAsync(m => m.Id == id);
-            if (orderPizza == null)
-            {
-                return NotFound();
-            }
-
-            return View(orderPizza);
-        }
-
-        // POST: OrderPizzas/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(int id)
-        {
-            var orderPizza = await _context.OrderPizza.FindAsync(id);
-            _context.OrderPizza.Remove(orderPizza);
-            await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(Index));
-        }
-
-        private bool OrderPizzaExists(int id)
-        {
-            return _context.OrderPizza.Any(e => e.Id == id);
-        }
-
+ 
 
         // GET: OrderPizzas/Create
         public IActionResult CreateOrderPizza()

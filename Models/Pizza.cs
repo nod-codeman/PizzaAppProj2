@@ -11,15 +11,9 @@ namespace VMANpizza.Models
         public int Id { get; set; }
         [Display(Name = "Pizza Type")]
         public string PizzaType { get; set; }
-        //[Required]
-        //public string Size { get; set; }
-        //public double PriceS { get; set; }
-        //public double PriceM { get; set; }
-        //public double PriceL { get; set; }
         public double QtyS { get; set; }
         public double QtyM { get; set; }
         public double QtyL { get; set; }
         public int OrderId { get; set; }
-        public int CartId { get; set; }
     }
 }
