@@ -24,6 +24,8 @@ namespace VMANpizza.Models
        
         public DbSet<VMANpizza.Models.ViewModel.OrderPizza> OrderPizza { get; set; }
 
+        public DbSet<Customer> Customers { get; set; }
+
     }
 }
 
