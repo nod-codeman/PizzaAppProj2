@@ -33,7 +33,7 @@ namespace VMANpizza.Controllers
             }
 
             var customer = await _context.Customers
-                .FirstOrDefaultAsync(m => m.ID == id);
+                .FirstOrDefaultAsync(m => m.Id == id);
             if (customer == null)
             {
                 return NotFound();
@@ -87,7 +87,7 @@ namespace VMANpizza.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("ID,FirstName,LastName,Email")] Customer customer)
         {
-            if (id != customer.ID)
+            if (id != customer.Id)
             {
                 return NotFound();
             }
@@ -101,7 +101,7 @@ namespace VMANpizza.Controllers
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!CustomerExists(customer.ID))
+                    if (!CustomerExists(customer.Id))
                     {
                         return NotFound();
                     }
@@ -124,7 +124,7 @@ namespace VMANpizza.Controllers
             }
 
             var customer = await _context.Customers
-                .FirstOrDefaultAsync(m => m.ID == id);
+                .FirstOrDefaultAsync(m => m.Id == id);
             if (customer == null)
             {
                 return NotFound();
@@ -146,7 +146,7 @@ namespace VMANpizza.Controllers
 
         private bool CustomerExists(int id)
         {
-            return _context.Customers.Any(e => e.ID == id);
+            return _context.Customers.Any(e => e.Id == id);
         }
     }
 }

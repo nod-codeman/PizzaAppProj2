@@ -1,0 +1,305 @@
+﻿@model IEnumerable<VMANpizza.Models.ViewModel.OrderPizza>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.QtySbac)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.QtyMbac)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.QtyLbac)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.QtySsal)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.QtyMsal)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.QtyLsal)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.QtySpep)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.QtyMpep)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.QtyLpep)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.QtySmus)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.QtyMmus)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.QtyLmus)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.QtySche)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.QtyMche)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.QtyLche)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.QtySchk)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.QtyMchk)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.QtyLchk)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PriceSbac)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PriceMbac)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PriceLbac)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PriceSsal)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PriceMsal)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PriceLsal)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PriceSpep)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PriceMpep)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PriceLpep)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PriceSmus)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PriceMmus)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PriceLmus)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PriceSche)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PriceMche)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PriceLche)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PriceSchk)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PriceMchk)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PriceLchk)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.pizzaTypeBac)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.pizzaTypeSal)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.pizzaTypePep)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.pizzaTypeMus)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.pizzaTypeChe)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.pizzaTypeChk)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.customerId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.orderId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.OrderDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.totalPrice)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.QtySbac)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.QtyMbac)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.QtyLbac)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.QtySsal)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.QtyMsal)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.QtyLsal)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.QtySpep)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.QtyMpep)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.QtyLpep)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.QtySmus)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.QtyMmus)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.QtyLmus)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.QtySche)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.QtyMche)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.QtyLche)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.QtySchk)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.QtyMchk)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.QtyLchk)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PriceSbac)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PriceMbac)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PriceLbac)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PriceSsal)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PriceMsal)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PriceLsal)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PriceSpep)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PriceMpep)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PriceLpep)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PriceSmus)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PriceMmus)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PriceLmus)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PriceSche)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PriceMche)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PriceLche)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PriceSchk)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PriceMchk)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PriceLchk)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.pizzaTypeBac)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.pizzaTypeSal)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.pizzaTypePep)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.pizzaTypeMus)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.pizzaTypeChe)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.pizzaTypeChk)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.customerId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.orderId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OrderDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.totalPrice)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
