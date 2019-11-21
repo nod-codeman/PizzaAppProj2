@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+/**import { Component } from '@angular/core';
 import { Pizza } from './serv/pizza';
 
 @Component({
@@ -17,9 +17,9 @@ export class AppComponent {
   }
 
   getPizza(){
-    /**Order.Pizzas */
+    /**Order.Pizzas
     
     
     return 'Bacon'
   }
-}
+}*/
