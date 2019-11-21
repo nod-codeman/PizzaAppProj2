@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-serv',
@@ -6,13 +6,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./serv.component.scss']
 })
 export class ServComponent implements OnInit {
-
+   @Input() pizzatype: string
+   @Input('master') mastername: string
   constructor() { }
 
   ngOnInit() {
   }
-
-  getPizza(){
-    
-  }
+   
+  
+  
 }

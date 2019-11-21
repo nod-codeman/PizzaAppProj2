@@ -348,7 +348,8 @@
     </svg>
 
   </div>
-
+  <div><div NewPizza=""></div></div>
+  <app-serv *ngFor ="let p of NewPizza" [pizzatype]="p" [master]="mastername"></app-serv>
   <!-- Resources -->
   <h2>Resources</h2>
   <p>Here are some links to help you get started:</p>

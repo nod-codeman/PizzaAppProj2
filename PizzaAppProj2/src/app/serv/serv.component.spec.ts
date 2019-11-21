@@ -20,6 +20,6 @@ describe('ServComponent', () => {
   });
 
   it('should create', () => {
-    expect(component).toBeTruthy();
+    expect(component.getPizza).toBeTruthy();
   });
 });
