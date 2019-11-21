@@ -13,11 +13,11 @@ namespace VMANpizza.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class ServController : ControllerBase
+    public class ServeController : ControllerBase
     {
         private readonly AppDbContext _context;
 
-        public ServController(AppDbContext context)
+        public ServeController(AppDbContext context)
         {
             _context = context;
 
