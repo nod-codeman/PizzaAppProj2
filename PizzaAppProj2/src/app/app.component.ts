@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+/**import { Component } from '@angular/core';
+import { Pizza } from './serv/pizza';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,18 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'PizzaAppProj2';
-}
+  NewPizza = new Pizza();
+
+
+  performUnit() {
+    
+
+  }
+
+  getPizza(){
+    /**Order.Pizzas
+    
+    
+    return 'Bacon'
+  }
+}*/
