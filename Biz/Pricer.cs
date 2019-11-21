@@ -14,9 +14,9 @@ namespace VMANpizza.BL
         {
             Pizza bacon = new Pizza();
             bacon.PizzaType = "Bacon";
-            bacon.PriceS = 8;
-            bacon.PriceM = 12;
-            bacon.PriceL = 17;
+            //bacon.PriceS = 8;
+            //bacon.PriceM = 12;
+            //bacon.PriceL = 17;
             double bsq;
             double.TryParse(newOrder["QtySbac"], out bsq);
             bacon.QtyS = bsq;
@@ -31,9 +31,9 @@ namespace VMANpizza.BL
 
             Pizza salami = new Pizza();
             salami.PizzaType = "Salami";
-            salami.PriceS = 11;
-            salami.PriceM = 16;
-            salami.PriceL = 19;
+            //salami.PriceS = 11;
+            //salami.PriceM = 16;
+            //salami.PriceL = 19;
             double ssq;
             double.TryParse(newOrder["QtySsal"], out ssq);
             salami.QtyS = ssq;
@@ -48,9 +48,9 @@ namespace VMANpizza.BL
 
             Pizza pepperoni = new Pizza();
             pepperoni.PizzaType = "Pepperoni";
-            pepperoni.PriceS = 7;
-            pepperoni.PriceM = 11;
-            pepperoni.PriceL = 14;
+            //pepperoni.PriceS = 7;
+            //pepperoni.PriceM = 11;
+            //pepperoni.PriceL = 14;
             double psq;
             double.TryParse(newOrder["QtySpep"], out psq);
             pepperoni.QtyS = psq;
@@ -65,9 +65,9 @@ namespace VMANpizza.BL
 
             Pizza mushroom = new Pizza();
             mushroom.PizzaType = "Mushroom";
-            mushroom.PriceS = 10;
-            mushroom.PriceM = 14;
-            mushroom.PriceL = 17;
+            //mushroom.PriceS = 10;
+            //mushroom.PriceM = 14;
+            //mushroom.PriceL = 17;
             double msq;
             double.TryParse(newOrder["QtySmus"], out msq);
             mushroom.QtyS = msq;
@@ -82,9 +82,9 @@ namespace VMANpizza.BL
 
             Pizza cheese = new Pizza();
             cheese.PizzaType = "Cheese";
-            cheese.PriceS = 5;
-            cheese.PriceM = 10;
-            cheese.PriceL = 12;
+            //cheese.PriceS = 5;
+            //cheese.PriceM = 10;
+            //cheese.PriceL = 12;
             double csq;
             double.TryParse(newOrder["QtySche"], out csq);
             cheese.QtyS = csq;
@@ -99,9 +99,9 @@ namespace VMANpizza.BL
 
             Pizza chicken = new Pizza();
             chicken.PizzaType = "Chicken";
-            chicken.PriceS = 10;
-            chicken.PriceM = 14;
-            chicken.PriceL = 18;
+            //chicken.PriceS = 10;
+            //chicken.PriceM = 14;
+            //chicken.PriceL = 18;
             double chsq;
             double.TryParse(newOrder["QtySchk"], out chsq);
             chicken.QtyS = chsq;

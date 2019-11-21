@@ -13,14 +13,14 @@ namespace VMANpizza.Models
         public string PizzaType { get; set; }
         //[Required]
         //public string Size { get; set; }
-        public decimal PriceS { get; set; }
-        public decimal PriceM { get; set; }
-        public decimal PriceL { get; set; }
+        //public decimal PriceS { get; set; }
+        //public decimal PriceM { get; set; }
+        //public decimal PriceL { get; set; }
         public double QtyS { get; set; }
         public double QtyM { get; set; }
         public double QtyL { get; set; }
         public int OrderId { get; set; }
-        public int CartId { get; set; }
+        //public int CartId { get; set; }
         //test.
     }
 }
