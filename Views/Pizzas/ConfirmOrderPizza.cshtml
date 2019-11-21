@@ -1,7 +1,7 @@
 ﻿@model IEnumerable<VMANpizza.Models.Pizza>
 
 @{
-    ViewData["Title"] = "ConfirmOrderPizza";
+    ViewData["Title"] = "Confirm Order Pizza";
 }
 
 <h1>Confirm Order</h1>
@@ -71,7 +71,7 @@
     </tbody>
 </table>
 <h5>Pickup or Delivery</h5>
-<div><button onclick="initMap();">Confirm</button></div>
+<div><button onclick="initMap();" class="btn-danger">Confirm Order</button></div>
 <div id="map" style="height:200px"></div>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDjpyDEuQwCv8aYfJBn1_eCjicRO9tUOEQ">
 </script>
