@@ -1,4 +1,4 @@
-import { TestBed, async } from '@angular/core/testing';
+/**import { TestBed, async } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
 
@@ -32,4 +32,11 @@ describe('AppComponent', () => {
     const compiled = fixture.debugElement.nativeElement;
     expect(compiled.querySelector('.content span').textContent).toContain('PizzaAppProj2 app is running!');
   });
-});
+
+  it(`should get next title 'PizzaAppProj2'`, () => {
+    const fixture = TestBed.createComponent(AppComponent);
+    fixture.detectChanges();
+    const app = fixture.debugElement.componentInstance;
+    expect(app.PizzaType).toEqual('Bacon')
+  });
+});*/

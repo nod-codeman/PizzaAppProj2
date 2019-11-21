@@ -1,4 +1,4 @@
-import { BrowserModule } from '@angular/platform-browser';
+/**import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -18,3 +18,4 @@ import { ServComponent } from './serv/serv.component';
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+*/
