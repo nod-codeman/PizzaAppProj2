@@ -8,7 +8,7 @@ using VMANpizza.Models;
 
 namespace VMANpizza.BL
 {
-    public class Pricing
+    public class Pricer
     {
         public void TotalPrice(IFormCollection newOrder)
         {

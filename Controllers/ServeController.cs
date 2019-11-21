@@ -30,7 +30,7 @@ namespace VMANpizza.Controllers
 
 
 
-            Pricing register = new Pricing();
+            Pricer register = new Pricer();
 
             register.TotalPrice(form);
 
