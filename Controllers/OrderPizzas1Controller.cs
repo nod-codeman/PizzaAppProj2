@@ -277,34 +277,34 @@ namespace VMANpizza.Controllers
             OrderPizza OrderPizzasList = new OrderPizza
             {
                 pizzaTypeBac = "Bacon",
-                PriceSbac = 2,
-                PriceMbac = 5,
-                PriceLbac = 7,
+                PriceSbac = 8,
+                PriceMbac = 12,
+                PriceLbac = 17,
 
                 pizzaTypeSal = "Salami",
-                PriceSsal = 3,
-                PriceMsal = 6,
-                PriceLsal = 8,
+                PriceSsal = 11,
+                PriceMsal = 16,
+                PriceLsal = 19,
 
                 pizzaTypePep = "Pepperoni",
-                PriceSpep = 2,
-                PriceMpep = 5,
-                PriceLpep = 7,
+                PriceSpep = 7,
+                PriceMpep = 11,
+                PriceLpep = 14,
 
                 pizzaTypeMus = "Mushroom",
-                PriceSmus = 2,
-                PriceMmus = 4,
-                PriceLmus = 6,
+                PriceSmus = 10,
+                PriceMmus = 12,
+                PriceLmus = 16,
 
                 pizzaTypeChe = "Cheese",
-                PriceSche = 2,
-                PriceMche = 4,
-                PriceLche = 6,
+                PriceSche = 5,
+                PriceMche = 7,
+                PriceLche = 11,
 
                 pizzaTypeChk = "Chicken",
-                PriceSchk = 2,
-                PriceMchk = 4,
-                PriceLchk = 6,
+                PriceSchk = 10,
+                PriceMchk = 12,
+                PriceLchk = 16,
                 OrderDate = DateTime.Now
 
             };
