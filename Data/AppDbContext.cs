@@ -28,6 +28,8 @@ namespace VMANpizza.Models
 
         public DbSet<Order> Orders { get; set; }
 
+        public DbSet<VMANpizza.Models.ViewModel.LoginViewModel> LoginViewModel { get; set; }
+
     }
 }
 
