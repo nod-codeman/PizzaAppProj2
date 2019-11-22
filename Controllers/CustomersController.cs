@@ -85,6 +85,15 @@ namespace VMANpizza.Controllers
         {
             if (ModelState.IsValid)
             {
+<<<<<<< HEAD
+                _context.Add(customer);
+                await _context.SaveChangesAsync();
+                return RedirectToAction("CreateOrderPizza", "OrderPizzas1");
+                //return RedirectToAction(nameof(Create));
+            }
+            return RedirectToAction("CreateOrderPizza", "OrderPizzas1");
+            //return View("Views/OrderPizzas1/CreateOrderPizza.cshtml");
+=======
                 var current_email = await _context.Customers
                 .FirstOrDefaultAsync(m => m.Email == customer.Email);
                 if (current_email == null )
@@ -95,6 +104,7 @@ namespace VMANpizza.Controllers
                 }
             }
             return View();
+>>>>>>> 061c83d736a9619f1d2147052a994945ace75b12
         }
 
         // GET: Customers/Edit/5
