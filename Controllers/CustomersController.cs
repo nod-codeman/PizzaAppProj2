@@ -59,9 +59,11 @@ namespace VMANpizza.Controllers
             {
                 _context.Add(customer);
                 await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Create));
+                return RedirectToAction("CreateOrderPizza", "OrderPizzas1");
+                //return RedirectToAction(nameof(Create));
             }
-            return View(customer);
+            return RedirectToAction("CreateOrderPizza", "OrderPizzas1");
+            //return View("Views/OrderPizzas1/CreateOrderPizza.cshtml");
         }
 
         // GET: Customers/Edit/5
