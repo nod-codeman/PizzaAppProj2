@@ -19,7 +19,11 @@ namespace VMANpizza.Controllers
             _context = context;
         }
 
-       
+        // GET: Orders
+        public async Task<IActionResult> Index()
+        {
+            return View(await _context.Orders.ToListAsync());
+        }
 
         // POST: OrderPizzas1/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 

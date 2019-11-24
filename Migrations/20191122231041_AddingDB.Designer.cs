@@ -10,8 +10,8 @@ using VMANpizza.Models;
 namespace VMANpizza.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20191122212519_Added-DB")]
-    partial class AddedDB
+    [Migration("20191122231041_AddingDB")]
+    partial class AddingDB
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
