@@ -42,8 +42,13 @@ namespace VMANpizza.Controllers
 
         // POST: api/CustomerAPI
         [HttpPost]
-        public void Post([FromBody] string value)
+        public async void CreateCustomer([FromBody] Customer customer)
         {
+            //if customer does not exist, then create a new customer
+            if (!(_repo.CustomerExits(customer.Email)))
+            {
+                await _repo.CreateCustomer(customer);
+            }
         }
 
         // PUT: api/CustomerAPI/5

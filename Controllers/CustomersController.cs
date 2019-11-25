@@ -27,7 +27,7 @@ namespace VMANpizza.Controllers
         //    return View(await _repo.GetCustomer.ToListAsync());
         //}
 
-
+        [HttpGet]
         public IActionResult Login()
         {
             return View();
@@ -41,18 +41,47 @@ namespace VMANpizza.Controllers
 
                 if (email != null)
                 {
+                    var custEmail = await _apiController.Get(email);
+                    if(custEmail == null)
+                    {
+                        //if registration was not successful, check and return erro massage
+                        ModelState.AddModelError(string.Empty, "Invalid user. Login failed.");
+                        return View();
+                    }
                     //redirect user to home page
                     return RedirectToAction("CreateOrderPizza", "OrderPizzas1");
                 }
                 else
                 {
-                    //if registration was not successful, check and return erro massage
-                    ModelState.AddModelError(string.Empty, "Invalid user. Login failed.");
                     return View();
-
                 }
             }
             return RedirectToAction("index", "home");
+        }
+
+
+        [HttpGet]
+        public IActionResult CreateCustomer()
+        {
+            return View();
+        }
+
+        //// POST: Customers/Create
+        //// To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        //// more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> CreateCustomer([Bind("ID,FirstName,LastName,Email")] Customer customer)
+        {
+            if (ModelState.IsValid)
+            {
+                //the controller calls the API create method.
+                _apiController.CreateCustomer(customer);
+                return RedirectToAction("CreateOrderPizza", "OrderPizzas1");
+            }
+            return RedirectToAction("CreateOrderPizza", "OrderPizzas1");
+            //return View("Views/OrderPizzas1/CreateOrderPizza.cshtml");
+
         }
 
         //// GET: Customers/Details/5
@@ -79,28 +108,7 @@ namespace VMANpizza.Controllers
         //    return View();
         //}
 
-        //// POST: Customers/Create
-        //// To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        //// more details see http://go.microsoft.com/fwlink/?LinkId=317598.
-        //[HttpPost]
-        //[ValidateAntiForgeryToken]
-        //public async Task<IActionResult> Create([Bind("ID,FirstName,LastName,Email")] Customer customer)
-        //{
-        //    if (ModelState.IsValid)
-        //    {
-        //        var current_email = await _context.Customers
-        //        .FirstOrDefaultAsync(m => m.Email == customer.Email);
-        //        if (current_email == null)
-        //        {
-        //            _context.Add(customer);
-        //            await _context.SaveChangesAsync();
-        //            return RedirectToAction(nameof(Create));
-        //        }
-        //    }
-        //    return RedirectToAction("CreateOrderPizza", "OrderPizzas1");
-        //    //return View("Views/OrderPizzas1/CreateOrderPizza.cshtml");
 
-        //}
 
         //// GET: Customers/Edit/5
         //public async Task<IActionResult> Edit(int? id)
