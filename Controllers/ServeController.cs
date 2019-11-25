@@ -38,14 +38,14 @@ namespace VMANpizza.Controllers
             return RedirectToAction("Details", "OrderPizzas");
         }
     
-    // GET: api/Serv
+    // GET: api/Serve
     [HttpGet]
         public async Task<ActionResult<IEnumerable<Pizza>>> GetPizzas()
         {
             return await _context.Pizzas.ToListAsync();
         }
 
-        // GET: api/Serv/5
+        // GET: api/Serve/5
         [HttpGet("{id}")]
         public async Task<ActionResult<Pizza>> GetPizza(int id)
         {
@@ -59,7 +59,7 @@ namespace VMANpizza.Controllers
             return pizza;
         }
 
-        // PUT: api/Serv/5
+        // PUT: api/Serve/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for
         // more details see https://aka.ms/RazorPagesCRUD.
         [HttpPut("{id}")]
@@ -91,7 +91,7 @@ namespace VMANpizza.Controllers
             return NoContent();
         }
 
-        // POST: api/Serv
+        // POST: api/Serve
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for
         // more details see https://aka.ms/RazorPagesCRUD.
         /*
@@ -104,7 +104,7 @@ namespace VMANpizza.Controllers
             return CreatedAtAction("GetPizza", new { id = pizza.Id }, pizza);
         }
         */
-        // DELETE: api/Serv/5
+        // DELETE: api/Serve/5
         [HttpDelete("{id}")]
         public async Task<ActionResult<Pizza>> DeletePizza(int id)
         {

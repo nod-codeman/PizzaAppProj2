@@ -1,0 +1,66 @@
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home Page - VMAN Pizza</title>
+    <link rel="stylesheet" href="/lib/bootstrap/dist/css/bootstrap.min.css" />
+</head>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light  border-bottom box-shadow mb-3" style="background-color:burlywood">
+            <div class="container">
+                <a class="navbar-brand" href="/">VMAN Pizza</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
+                    <ul class="navbar-nav flex-grow-1">
+                        <li class="nav-item" > 
+                           <a class="nav-link text-dark" (click)="Pizzasgetter()" >Store</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" routerLink='customer'>Login</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" routerLink='guest'>New Customer</a>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <ul>
+                       
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    
+   
+    <div *ngIf="[Title] == 'Customer'"> <app-customer></app-customer></div>
+    <div class="container">
+        <main role="main" class="pb-3">
+            <h1 id="Locator" class="display-4" class="text-center">{{Title}}</h1>
+    <div *ngIf="[Title] == 'WELCOME'" class="text-center">
+        
+        <div class="jumbotron" style="background-color:aliceblue">
+            <h1>VMAN Pizza</h1>
+            <p>Home to the best pizza ever made by man.</p>
+            <a class="btn btn-outline-warning" href="http://localhost:51105/Customers/Create">Register</a>
+            <a class="btn btn-outline-warning" href="http://localhost:51105/OrderPizzas1/CreateOrderPizza">Continue as a guest</a>
+        </div>
+    </div>
+
+        </main>
+    </div>
+
+    <footer class="border-top footer text-muted" style="background-color:burlywood">
+        <div class="container">
+            &copy; 2019 - VMAN Pizza - <a href="/Home/Privacy">Privacy</a>
+        </div>
+    </footer>
+    <script src="/lib/jquery/dist/jquery.min.js"></script>
+    <script src="/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/js/site.js?v=4q1jwFhaPaZgr8WAUSrux6hAuh0XDg9kPS3xIVq36I0"></script>
+
+
+<router-outlet></router-outlet>

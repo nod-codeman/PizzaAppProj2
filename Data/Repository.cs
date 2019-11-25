@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Mvc;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -6,10 +7,27 @@ using VMANpizza.Models;
 
 namespace VMANpizza.Data
 {
-    public class Repository
+    public class Repository:Controller
     {
+        
         public static List<Pizza> AllOrders { get; set; }
 
+        private static AppDbContext _context;
+
+        public Repository(AppDbContext context)
+        {
+            _context = context;
+
+            
+        }
+
+        public static List<Order> Orders()
+        {
+            var Orders = _context.Orders.ToList();
+
+            return Orders;
+        
+        }
         public static void Start()
         {
 
