@@ -28,11 +28,22 @@ namespace VMANpizza
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<AppDbContext>(options =>
-           options.UseSqlServer(Configuration.GetConnectionString("AppDbContext")));
+                options.UseSqlServer(Configuration.GetConnectionString("AppDbContext")));
             //options.UseSqlServer("Server=tcp:tserving.database.windows.net,1433;Initial Catalog = Vlive; Persist Security Info=False;User ID = DBanger; Password=sdktesting@2;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout = 30;"));
             services.AddControllersWithViews();
             services.AddTransient<CustomerRepos>();
             services.AddTransient<CustomerAPIController>();
+
+            //add CORs to be used for API
+            services.AddCors(options =>
+            {
+                options.AddPolicy("CorsPolicy",
+                    builder =>
+                    builder.WithOrigins("http://localhost:51105")
+                    .AllowAnyMethod()
+                    .AllowAnyHeader()
+                    .AllowCredentials());
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -48,6 +59,10 @@ namespace VMANpizza
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
+
+            // For CORS.
+            app.UseCors("CorsPolicy");
+
             app.UseHttpsRedirection();
             app.UseStaticFiles();
 

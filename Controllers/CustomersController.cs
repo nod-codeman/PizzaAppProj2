@@ -75,9 +75,18 @@ namespace VMANpizza.Controllers
         {
             if (ModelState.IsValid)
             {
-                //the controller calls the API create method.
-                _apiController.CreateCustomer(customer);
-                return RedirectToAction("CreateOrderPizza", "OrderPizzas1");
+                if (!_apiController.CustomerExits(customer))
+                {
+                    //the controller calls the API create method.
+                    _apiController.CreateCustomer(customer);
+                    return RedirectToAction("CreateOrderPizza", "OrderPizzas1");
+                }
+                else
+                {
+                    // Error. Alresdy exists.
+                    ModelState.AddModelError(string.Empty, "Customer already exists.");
+                    return View();
+                }
             }
             return RedirectToAction("CreateOrderPizza", "OrderPizzas1");
             //return View("Views/OrderPizzas1/CreateOrderPizza.cshtml");

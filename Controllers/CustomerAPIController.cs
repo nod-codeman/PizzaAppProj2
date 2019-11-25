@@ -22,7 +22,7 @@ namespace VMANpizza.Controllers
         [HttpGet]
         public IEnumerable<string> Get()
         {
-            return new string[] { "value1", "value2" };
+            return new string[] { "Nwojo", "Dike" };
         }
 
         // GET: api/CustomerAPI/5
@@ -31,6 +31,13 @@ namespace VMANpizza.Controllers
         {
             return (await _repo.GetCustomer(email));
         }
+
+        // POST: api/CustomerAPI/5
+        //[HttpPost("{email}")]
+        //public async Task<Customer> Get(string email)
+        //{
+        //    return (await _repo.GetCustomer(email));
+        //}
 
         //[HttpGet("{id}", Name = "Get")]
         //public async Task<Customer> Get(int id)
@@ -45,10 +52,20 @@ namespace VMANpizza.Controllers
         public async void CreateCustomer([FromBody] Customer customer)
         {
             //if customer does not exist, then create a new customer
-            if (!(_repo.CustomerExits(customer.Email)))
-            {
-                await _repo.CreateCustomer(customer);
-            }
+            //if (!(_repo.CustomerExits(customer.Email)))
+            //{
+            //    await _repo.CreateCustomer(customer);
+            //}
+            await _repo.CreateCustomer(customer);
+        }
+
+        [HttpPost]
+        public bool CustomerExits([FromBody] Customer customer)
+        {
+            //if customer does not exist, then create a new customer
+
+            return (_repo.CustomerExits(customer.Email));
+
         }
 
         // PUT: api/CustomerAPI/5
