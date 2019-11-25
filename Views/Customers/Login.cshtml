@@ -6,7 +6,7 @@
 
 <h1>Login</h1>
 
-<h4>LoginViewModel</h4>
+
 <hr />
 <div class="row">
     <div class="col-md-4">
@@ -36,3 +36,29 @@
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 }
+
+@*This ajax below is used for test purposes to retrieve api data*@
+
+
+@*<script>
+$('#getCustomer').click(function (e) {
+    $("#getCustomerResult").val("");
+    var url = "http://localhost:51105/api/CustomerAPI/";
+    $.ajax({
+        contentType: 'application/json',
+        type: "POST",
+        url: url,
+        success: function (data, textStatus, jqXHR) {
+            alert("Something");
+            //document.getElelementById("getCustomerResult").innerHTML = data.customer;
+            //data.forEach(function (customer)
+            //{
+            //    $("#getCustomerResult").val($("#getCustomerResult").val() + customer.email + "|");
+            //});
+        },
+        error: function (jqXHR, textStatus, errorThrown) {
+            $("#getCustomerResult").val(jqXHR.statusText);
+        }
+    });
+});
+</script>*@
