@@ -1,0 +1,78 @@
+﻿@model IEnumerable<VMANpizza.Models.Pizza>
+
+@{
+    ViewData["Title"] = "Confirm Order Pizza";
+}
+
+<h1>Confirm Order</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.PizzaType)
+            </th>
+            @*<th>
+                @Html.DisplayNameFor(model => model.PriceS)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PriceM)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PriceL)
+            </th>*@
+            <th>
+                @Html.DisplayNameFor(model => model.QtyS)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.QtyM)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.QtyL)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PizzaType)
+                </td>
+                @*<td>
+                    @Html.DisplayFor(modelItem => item.PriceS)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PriceM)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PriceL)
+                </td>*@
+                <td>
+                    @Html.DisplayFor(modelItem => item.QtyS)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.QtyM)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.QtyL)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<h5>Pickup or Delivery</h5>
+<div><button onclick="initMap();" class="btn-danger">Confirm Order</button></div>
+<div id="map" style="height:200px"></div>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDjpyDEuQwCv8aYfJBn1_eCjicRO9tUOEQ">
+</script>
+<script defer src="~/js/GooWap.js"></script>

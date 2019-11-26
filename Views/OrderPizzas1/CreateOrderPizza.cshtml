@@ -1,0 +1,272 @@
+﻿@model VMANpizza.Models.ViewModel.OrderPizza
+
+@{
+    ViewData["Title"] = "CreateOrderPizza";
+}
+
+
+@{
+    ViewData["Title"] = "CreateOrderPizza";
+}
+<head>
+
+</head>
+
+<h3>Our V-MAN Pizza</h3>
+
+<hr />
+
+<form asp-action="CreateOrderPizza">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <div class="container-fluid">
+        <div class="m-md-4">
+            <div class="row">
+                <div class="col">
+                    <a @*asp-action="" asp-controller=""*@>
+                        <div class="box-img">
+                            <img src="~/Images/another-chicken.jpg" />
+                        </div>
+                        <div class="box-text">
+                            <h3>Bacon V-MAN</h3>
+                        </div>
+                        <ul>
+                            <li>
+                                <input asp-for="PriceSbac" id="priceBacS" type="hidden" />
+                                <p>Small: ($8)    <input asp-for="QtySbac" type="number" id="BacS" onclick="UpdatePrice();" value="0" /></p>
+                            </li>
+                            <li>
+                                <input asp-for="PriceMbac" id="priceBacM" type="hidden" />
+                                <p>Medium: ($12) <input asp-for="QtyMbac" type="number" id="BacM" onclick="UpdatePrice();" value="0" /></p>
+                                @*<p>$3: <input type="checkbox"> <em>Medium</em></p>*@
+                            </li>
+                            <li>
+                                <input asp-for="PriceLbac" id="priceBacL" type="hidden" />
+                                <p>Large: ($17) <input asp-for="QtyLbac" type="number" id="BacL" onclick="UpdatePrice();" value="0" /></p>
+                                @*<p>$5: <input type="checkbox"> <em>Large</em></p>*@
+                            </li>
+                        </ul>
+                    </a>
+                    @*<div>
+                            <button align="right" type="submit" id="BacAdd" onclick="addBacon();" class="btn btn-danger">Add Order</button>
+                        </div>*@
+                </div>
+                <div class="col">
+                    <a @*asp-action="" asp-controller=""*@>
+                        <div class="box-img">
+                            <img src="~/Images/bocce_deluxe.jpg" />
+                        </div>
+                        <div class="box-text">
+                            <h3>Salami V-MAN</h3>
+                        </div>
+                        <ul>
+                            <li>
+                                <input asp-for="PriceSsal" id="priceSalS" type="hidden" />
+                                <p>Small: ($11) <input asp-for="QtySsal" type="number" id="SalS" onclick="UpdatePrice();" value="0" /></p>
+                            </li>
+                            <li>
+                                <input asp-for="PriceMsal" id="priceSalS" type="hidden" />
+                                <p>Medium: ($16)<input asp-for="QtyMsal" type="number" id="SalM" onclick="UpdatePrice();" value="0" /></p>
+                            </li>
+                            <li>
+                                <input asp-for="PriceLsal" id="priceSalS" type="hidden" />
+                                <p>Large: ($19) <input asp-for="QtyLsal" type="number" id="SalL" onclick="UpdatePrice();" value="0" /></p>
+                            </li>
+                        </ul>
+                    </a>
+                </div>
+                <div class="col">
+                    <a @*asp-action="" asp-controller=""*@>
+                        <div class="box-img">
+                            <img src="~/Images/original_bocce.jpg" />
+                        </div>
+                        <div class="box-text">
+                            <h3>Pepperoni V-MAN</h3>
+                        </div>
+                        <ul>
+                            <li>
+                                <input asp-for="PriceSpep" id="priceSalS" type="hidden" />
+                                <p>Small: ($7)    <input asp-for="QtySpep" type="number" id="PepS" onclick="UpdatePrice();" value="0" /></p>
+                                @*<input type="checkbox" checked="checked"> <em>Small</em>:*@
+                            </li>
+                            <li>
+                                <input asp-for="PriceMpep" id="priceSalS" type="hidden" />
+                                <p>Medium: ($11) <input asp-for="QtyMpep" type="number" id="PepM" onclick="UpdatePrice();" value="0" /></p>
+                                @*<p>$3: <input type="checkbox"> <em>Medium</em></p>*@
+                            </li>
+                            <li>
+                                <input asp-for="PriceLpep" id="priceSalS" type="hidden" />
+                                <p>Large: ($14) <input asp-for="QtyLpep" type="number" id="PepL" onclick="UpdatePrice();" value="0" /></p>
+                                @*<p>$5: <input type="checkbox"> <em>Large</em></p>*@
+                            </li>
+                        </ul>
+                    </a>
+                    @*<div>
+                            <button align="right" type="submit" id="PepAdd" onclick="addPepperoni();" class="btn btn-danger">Add Order</button>
+                        </div>*@
+                </div>
+                <div class="col">
+                    <a>
+                        <div class="box-img">
+                            <img src="~/Images/mushroom.jpg" />
+                        </div>
+                        <div class="box-text">
+                            <h3>Mushroom V-MAN</h3>
+                        </div>
+                        <ul>
+                            <li>
+                                <input asp-for="PriceSmus" id="priceSalS" type="hidden" />
+                                <p>Small: ($10)    :<input asp-for="QtySmus" type="number" id="MusS" onclick="UpdatePrice();" value="0" /></p>
+                            </li>
+                            <li>
+                                <input asp-for="PriceMmus" id="priceSalS" type="hidden" />
+                                <p>Medium: ($12) :<input asp-for="QtyMmus" type="number" id="MusM" onclick="UpdatePrice();" value="0" /></p>
+
+                            </li>
+                            <li>
+                                <input asp-for="PriceLmus" id="priceSalS" type="hidden" />
+                                <p>Large: ($16) :<input asp-for="QtyLmus" type="number" id="MusL" onclick="UpdatePrice();" value="0" /></p>
+
+                            </li>
+                        </ul>
+                    </a>
+                    @*<div>
+                            <button align="right" type="submit" id="MusAdd" onclick="addMushroom();" class="btn btn-danger">Add Order</button>
+                        </div>*@
+                </div>
+                <div class="col">
+                    <a @*asp-action="" asp-controller=""*@>
+                        <div class="box-img">
+                            <img src="~/Images/cheese-images.jpg" />
+                        </div>
+                        <div class="box-text">
+                            <h3>Cheese V-MAN</h3>
+                        </div>
+                        <ul>
+                            <li>
+                                <input asp-for="PriceSche" id="priceSalS" type="hidden" />
+                                <p>Small: ($5)    <input asp-for="QtySche" type="number" id="CheS" onclick="UpdatePrice();" value="0" /></p>
+                                @*<input type="checkbox" checked="checked"> <em>Small</em>:*@
+                            </li>
+                            <li>
+                                <input asp-for="PriceMche" id="priceSalS" type="hidden" />
+                                <p>Medium: ($7) <input asp-for="QtyMche" type="number" id="CheM" onclick="UpdatePrice();" value="0" /></p>
+                                @*<p>$3: <input type="checkbox"> <em>Medium</em></p>*@
+                            </li>
+                            <li>
+                                <input asp-for="PriceLche" id="priceSalS" type="hidden" />
+                                <p>Large: ($11) <input asp-for="QtyLche" type="number" id="CheL" onclick="UpdatePrice();" value="0" /></p>
+                                @*<p>$5: <input type="checkbox"> <em>Large</em></p>*@
+                            </li>
+                        </ul>
+                    </a>
+                    @*<div>
+                            <button align="right" type="submit" id="PepAdd" onclick="addPepperoni();" class="btn btn-danger">Add Order</button>
+                        </div>*@
+                </div>
+                <div class="col">
+                    <a @*asp-action="" asp-controller=""*@>
+                        <div class="box-img">
+                            <img src="~/Images/chicken_art.jpg" />
+                        </div>
+                        <div class="box-text">
+                            <h3>Chicken V-MAN</h3>
+                        </div>
+                        <ul>
+                            <li>
+                                <input asp-for="PriceSchk" id="priceSalS" type="hidden" />
+                                <p>Small: ($10)    <input asp-for="QtySchk" type="number" id="ChkS" onclick="UpdatePrice();" value="0" /></p>
+                                @*<input type="checkbox" checked="checked"> <em>Small</em>:*@
+                            </li>
+                            <li>
+                                <input asp-for="PriceMchk" id="priceSalS" type="hidden" />
+                                <p>Medium: ($12) <input asp-for="QtyMchk" type="number" id="ChkM" onclick="UpdatePrice();" value="0" /></p>
+                                @*<p>$3: <input type="checkbox"> <em>Medium</em></p>*@
+                            </li>
+                            <li>
+                                <input asp-for="PriceLchk" id="priceSalS" type="hidden" />
+                                <p>Large: ($16) <input asp-for="QtyLchk" type="number" id="ChkL" onclick="UpdatePrice();" value="0" /></p>
+                                @*<p>$5: <input type="checkbox"> <em>Large</em></p>*@
+                            </li>
+                        </ul>
+                    </a>
+                    <input asp-for="customerEmail" id="custEmail" type="hidden" />
+                    <input asp-for="pizzaTypeBac" id="priceSalS" type="hidden" />
+                    <input asp-for="pizzaTypeSal" id="priceSalS" type="hidden" />
+                    <input asp-for="pizzaTypePep" id="priceSalS" type="hidden" />
+                    <input asp-for="pizzaTypeMus" id="priceSalS" type="hidden" />
+                    <input asp-for="pizzaTypeChe" id="priceSalS" type="hidden" />
+                    <input asp-for="pizzaTypeChk" id="priceSalS" type="hidden" />
+                </div>
+            </div>
+        </div>
+    </div>
+    @*<div class="float-right">*@
+    <div>
+        <span>Total Price: $</span>
+        <input type="text" id="totP" name="fname">
+    </div>
+    <div class="form-group">
+        <input type="submit" value="Comfirm Order" class="btn btn-danger" />
+    </div>
+    @*</div>*@
+</form>
+
+<div>
+        <a asp-action="Create" asp-controller="OrderPizzas1" asp-route-id="@Model.customerEmail">Confirm Order</a>
+    </div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+
+<script>
+    function addBacon() {
+        var BacS = parseFloat(+document.getElementById("BacS").value);
+        var BacM = parseFloat(+document.getElementById("BacM").value);
+        var BacL = parseFloat(+document.getElementById("BacL").value);
+
+        document.getElementById("totP").value = parseFloat(+document.getElementById("totP").value) + ((BacS * 2) + (BacM * 5) + (BacL * 7));
+    }
+    function addPepperoni() {
+        var PepS = parseFloat(+document.getElementById("PepS").value);
+        var PepM = parseFloat(+document.getElementById("PepM").value);
+        var PepL = parseFloat(+document.getElementById("PepL").value);
+
+        document.getElementById("totP").value = parseFloat(+document.getElementById("totP").value) + ((PepS * 2) + (PepM * 5) + (PepL * 7));
+    }
+    function addSalami() {
+        var SalS = parseFloat(+document.getElementById("SalS").value);
+        var SalM = parseFloat(+document.getElementById("SalM").value);
+        var SalL = parseFloat(+document.getElementById("SalL").value);
+
+        document.getElementById("totP").value = parseFloat(+document.getElementById("totP").value) + ((SalS * 2) + (SalM * 5) + (SalL * 7));
+    }
+    function addMushroom() {
+        var MusS = parseFloat(+document.getElementById("MusS").value);
+        var MusM = parseFloat(+document.getElementById("MusM").value);
+        var MusL = parseFloat(+document.getElementById("MusL").value);
+
+        document.getElementById("totP").value = parseFloat(+document.getElementById("totP").value) + ((MusS * 2) + (MusM * 5) + (MusL * 7));
+    }
+    function UpdatePrice() {
+        var MusS = parseFloat(+document.getElementById("MusS").value);
+        var MusM = parseFloat(+document.getElementById("MusM").value);
+        var MusL = parseFloat(+document.getElementById("MusL").value);
+        var SalS = parseFloat(+document.getElementById("SalS").value);
+        var SalM = parseFloat(+document.getElementById("SalM").value);
+        var SalL = parseFloat(+document.getElementById("SalL").value);
+        var PepS = parseFloat(+document.getElementById("PepS").value);
+        var PepM = parseFloat(+document.getElementById("PepM").value);
+        var PepL = parseFloat(+document.getElementById("PepL").value);
+        var BacS = parseFloat(+document.getElementById("BacS").value);
+        var BacM = parseFloat(+document.getElementById("BacM").value);
+        var BacL = parseFloat(+document.getElementById("BacL").value);
+        var CheS = parseFloat(+document.getElementById("CheS").value);
+        var CheM = parseFloat(+document.getElementById("CheM").value);
+        var CheL = parseFloat(+document.getElementById("CheL").value);
+        var ChkS = parseFloat(+document.getElementById("ChkS").value);
+        var ChkM = parseFloat(+document.getElementById("ChkM").value);
+        var ChkL = parseFloat(+document.getElementById("ChkL").value);
+        document.getElementById("totP").value = ((MusS * 10) + (MusM * 12) + (MusL * 16)) + ((BacS * 8) + (BacM * 12) + (BacL * 17)) + ((PepS * 7) + (PepM * 11) + (PepL * 14)) + ((SalS * 11) + (SalM * 16) + (SalL * 19)) + ((CheS * 5) + (CheM * 7) + (CheL * 11)) + ((ChkS * 10) + (ChkM * 12) + (ChkL * 16));
+    }
+</script>
