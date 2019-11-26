@@ -30,7 +30,7 @@ namespace VMANpizza.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,QtySbac,QtyMbac,QtyLbac,QtySsal,QtyMsal,QtyLsal,QtySpep,QtyMpep,QtyLpep,QtySmus,QtyMmus,QtyLmus,QtySche,QtyMche,QtyLche,QtySchk,QtyMchk,QtyLchk,PriceSbac,PriceMbac,PriceLbac,PriceSsal,PriceMsal,PriceLsal,PriceSpep,PriceMpep,PriceLpep,PriceSmus,PriceMmus,PriceLmus,PriceSche,PriceMche,PriceLche,PriceSchk,PriceMchk,PriceLchk,pizzaTypeBac,pizzaTypeSal,pizzaTypePep,pizzaTypeMus,pizzaTypeChe,pizzaTypeChk,customerId,orderId,OrderDate,totalPrice")] OrderPizza orderPizza)
+        public async Task<IActionResult> Create([Bind("Id,QtySbac,QtyMbac,QtyLbac,QtySsal,QtyMsal,QtyLsal,QtySpep,QtyMpep,QtyLpep,QtySmus,QtyMmus,QtyLmus,QtySche,QtyMche,QtyLche,QtySchk,QtyMchk,QtyLchk,PriceSbac,PriceMbac,PriceLbac,PriceSsal,PriceMsal,PriceLsal,PriceSpep,PriceMpep,PriceLpep,PriceSmus,PriceMmus,PriceLmus,PriceSche,PriceMche,PriceLche,PriceSchk,PriceMchk,PriceLchk,pizzaTypeBac,pizzaTypeSal,pizzaTypePep,pizzaTypeMus,pizzaTypeChe,pizzaTypeChk,customerId,customerEmail,orderId,OrderDate,totalPrice")] OrderPizza orderPizza)
         {
             orderPizza.pizzaTypeBac = "Bacon";
             orderPizza.pizzaTypePep = "Pepperoni";
@@ -155,7 +155,7 @@ namespace VMANpizza.Controllers
 
 
         // GET: OrderPizzaCustomers1/CreateOrderPizza
-        public IActionResult CreateOrderPizza()
+        public IActionResult CreateOrderPizza(string Email)
         {
             OrderPizza OrderPizzasList = new OrderPizza
             {
@@ -188,8 +188,8 @@ namespace VMANpizza.Controllers
                 PriceSchk = 10,
                 PriceMchk = 12,
                 PriceLchk = 16,
-                OrderDate = DateTime.Now
-
+                OrderDate = DateTime.Now,
+                customerEmail = Email
             };
             return View(OrderPizzasList);
         }
@@ -200,7 +200,7 @@ namespace VMANpizza.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> CreateOrderPizza([Bind("Id,QtySbac,QtyMbac,QtyLbac,QtySsal,QtyMsal,QtyLsal,QtySpep,QtyMpep,QtyLpep,QtySmus,QtyMmus,QtyLmus,QtySche,QtyMche,QtyLche,QtySchk,QtyMchk,QtyLchk,PriceSbac,PriceMbac,PriceLbac,PriceSsal,PriceMsal,PriceLsal,PriceSpep,PriceMpep,PriceLpep,PriceSmus,PriceMmus,PriceLmus,PriceSche,PriceMche,PriceLche,PriceSchk,PriceMchk,PriceLchk,pizzaTypeBac,pizzaTypeSal,pizzaTypePep,pizzaTypeMus,pizzaTypeChe,pizzaTypeChk,customerId,orderId,OrderDate,totalPrice")] OrderPizza orderPizza)
+        public async Task<IActionResult> CreateOrderPizza([Bind("Id,QtySbac,QtyMbac,QtyLbac,QtySsal,QtyMsal,QtyLsal,QtySpep,QtyMpep,QtyLpep,QtySmus,QtyMmus,QtyLmus,QtySche,QtyMche,QtyLche,QtySchk,QtyMchk,QtyLchk,PriceSbac,PriceMbac,PriceLbac,PriceSsal,PriceMsal,PriceLsal,PriceSpep,PriceMpep,PriceLpep,PriceSmus,PriceMmus,PriceLmus,PriceSche,PriceMche,PriceLche,PriceSchk,PriceMchk,PriceLchk,pizzaTypeBac,pizzaTypeSal,pizzaTypePep,pizzaTypeMus,pizzaTypeChe,pizzaTypeChk,customerId,customerEmail,orderId,OrderDate,totalPrice")] OrderPizza orderPizza)
         {
             orderPizza.OrderDate = DateTime.Now;
             #region Set the total price
@@ -232,7 +232,7 @@ namespace VMANpizza.Controllers
             }
             else
             { currCustId = 1; }
-            orderPizza.customerId = Convert.ToInt32(currCustId) ;
+            //orderPizza.customerId = Convert.ToInt32(currCustId) ;
             return View("Views/OrderPizzas1/Create.cshtml", orderPizza);
         }
     }

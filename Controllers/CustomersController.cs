@@ -63,7 +63,9 @@ namespace VMANpizza.Controllers
         [HttpGet]
         public IActionResult CreateCustomer()
         {
-            return View();
+            Customer c = new Customer();
+            c.Email = "default@email.test";
+            return View(c);
         }
 
         //// POST: Customers/Create
@@ -79,7 +81,7 @@ namespace VMANpizza.Controllers
                 {
                     //the controller calls the API create method.
                     _apiController.CreateCustomer(customer);
-                    return RedirectToAction("CreateOrderPizza", "OrderPizzas1");
+                    return RedirectToAction("CreateOrderPizza", "OrderPizzas1",  new { Email = customer.Email });
                 }
                 else
                 {
