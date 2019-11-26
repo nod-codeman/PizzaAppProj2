@@ -10,8 +10,8 @@ using VMANpizza.Models;
 namespace VMANpizza.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20191124002319_changes")]
-    partial class changes
+    [Migration("20191126164541_OneChange")]
+    partial class OneChange
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -59,6 +59,8 @@ namespace VMANpizza.Migrations
                         .HasColumnType("float");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("CustomerId");
 
                     b.ToTable("Orders");
                 });
@@ -240,6 +242,15 @@ namespace VMANpizza.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("OrderPizza");
+                });
+
+            modelBuilder.Entity("VMANpizza.Models.Order", b =>
+                {
+                    b.HasOne("VMANpizza.Models.Customer", "Customer")
+                        .WithMany("Orders")
+                        .HasForeignKey("CustomerId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("VMANpizza.Models.Pizza", b =>

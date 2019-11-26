@@ -70,9 +70,6 @@ namespace VMANpizza.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int?>("CustomerId")
-                        .HasColumnType("int");
-
                     b.Property<int>("OrderId")
                         .HasColumnType("int");
 
@@ -89,8 +86,6 @@ namespace VMANpizza.Migrations
                         .HasColumnType("float");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("CustomerId");
 
                     b.HasIndex("OrderId");
 
@@ -258,10 +253,6 @@ namespace VMANpizza.Migrations
 
             modelBuilder.Entity("VMANpizza.Models.Pizza", b =>
                 {
-                    b.HasOne("VMANpizza.Models.Customer", null)
-                        .WithMany("Pizzas")
-                        .HasForeignKey("CustomerId");
-
                     b.HasOne("VMANpizza.Models.Order", null)
                         .WithMany("Pizzas")
                         .HasForeignKey("OrderId")

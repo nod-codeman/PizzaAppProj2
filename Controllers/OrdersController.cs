@@ -62,12 +62,30 @@ namespace VMANpizza.Controllers
                 return NotFound();
             }
 
-            var order = await _context.Orders
-                .Include(o => o.Customer)
-                .FirstOrDefaultAsync(m => m.Id == id);
-            if (order == null)
+            var order = new Order();
+
+            try
             {
-                return NotFound();
+                
+                var client = new HttpClient();
+                var getDataTask = client.GetAsync($"http://localhost:51105/api/order/{id}")
+                    .ContinueWith(response =>
+                    {
+
+                        var result = response.Result;
+                        if (result.StatusCode == System.Net.HttpStatusCode.OK)
+                        {
+                            var readResult = result.Content.ReadAsAsync<Order>();
+                            readResult.Wait();
+                            order = readResult.Result;
+                        }
+                    });
+                getDataTask.Wait();
+                
+            }
+            catch (Exception exc)
+            {
+                throw exc;
             }
 
             return View(order);

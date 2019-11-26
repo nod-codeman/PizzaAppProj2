@@ -22,7 +22,7 @@ namespace VMANpizza.Controllers
             _context = context;
         }
 
-        public async Task<ActionResult<IList<OrderPizza>>> Get()
+        /*public async Task<ActionResult<IList<OrderPizza>>> Get()
         {
             List<OrderPizza> orders = new List<OrderPizza>();
 
@@ -45,7 +45,7 @@ namespace VMANpizza.Controllers
             }
 
             return View(orders);
-        }
+        }*/
        
 
         // POST: OrderPizzas1/Create
