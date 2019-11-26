@@ -67,6 +67,7 @@ namespace VMANpizza.Controllers
         [HttpGet]
         public IActionResult CreateCustomer()
         {
+            
             return View();
         }
 
@@ -120,6 +121,9 @@ namespace VMANpizza.Controllers
                     var jsonData = new StringContent(customerRespone, Encoding.UTF8, "application/json");
                     await client.PostAsync(getUrl + apiUrl, jsonData);
                     return RedirectToAction("CreateOrderPizza", "OrderPizzas1");
+                    _apiController.CreateCustomer(customer);
+                    return RedirectToAction("CreateOrderPizza", "OrderPizzas1",  new { Email = customer.Email });
+
                 }
                 else
                 {

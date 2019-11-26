@@ -189,7 +189,7 @@
                             </li>
                         </ul>
                     </a>
-
+                    <input asp-for="customerEmail" id="custEmail" type="hidden" />
                     <input asp-for="pizzaTypeBac" id="priceSalS" type="hidden" />
                     <input asp-for="pizzaTypeSal" id="priceSalS" type="hidden" />
                     <input asp-for="pizzaTypePep" id="priceSalS" type="hidden" />
@@ -206,14 +206,14 @@
         <input type="text" id="totP" name="fname">
     </div>
     <div class="form-group">
-        <input type="submit" value="Create" class="btn btn-danger" />
+        <input type="submit" value="Comfirm Order" class="btn btn-danger" />
     </div>
     @*</div>*@
 </form>
 
-@*<div>
-        <a asp-action="Index">Back to List</a>
-    </div>*@
+<div>
+        <a asp-action="Create" asp-controller="OrderPizzas1" asp-route-id="@Model.customerEmail">Confirm Order</a>
+    </div>
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
