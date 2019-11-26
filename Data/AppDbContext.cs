@@ -16,7 +16,11 @@ namespace VMANpizza.Models
         }
 
         protected override void OnConfiguring(DbContextOptionsBuilder options) =>
+
+            //options.UseSqlServer("data source =.\\nichmihai;Initial Catalog=VMANpizzaDb;Integrated Security=true;MultipleActiveResultSets=true;");
+
             options.UseSqlServer("data source =.\\SQLEXPRESS;Initial Catalog=VmanDb;Integrated Security=true;MultipleActiveResultSets=true;");
+
         //options.UseSqlServer("Server=tcp:tserving.database.windows.net,1433;Initial Catalog = Vlive; Persist Security Info=False;User ID = DBanger; Password=sdktesting@2;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout = 30;");
 
         
