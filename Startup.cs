@@ -28,8 +28,13 @@ namespace VMANpizza
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<AppDbContext>(options =>
+
+            //options.UseSqlServer(Configuration.GetConnectionString("AppDbContext")));
+           // options.UseSqlServer("Server=tcp:tserving.database.windows.net,1433;Initial Catalog = Vlive; Persist Security Info=False;User ID = DBanger; Password=sdktesting@2;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout = 30;"));
+
                 options.UseSqlServer(Configuration.GetConnectionString("AppDbContext")));
             //options.UseSqlServer("Server=tcp:tserving.database.windows.net,1433;Initial Catalog = Vlive; Persist Security Info=False;User ID = DBanger; Password=sdktesting@2;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout = 30;"));
+
             services.AddControllersWithViews();
             services.AddTransient<CustomerRepos>();
             services.AddTransient<CustomerAPIController>();

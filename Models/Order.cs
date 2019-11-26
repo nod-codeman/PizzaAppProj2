@@ -13,5 +13,7 @@ namespace VMANpizza.Models
         public double totalPrice { get; set; }
         //public int CartId { get; set; }
         public List<Pizza> Pizzas { get; set; }
+
+        public Customer Customer { get; set; }
     }
 }

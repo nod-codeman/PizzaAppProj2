@@ -1,4 +1,4 @@
-﻿@model IEnumerable<VMANpizza.Models.Pizza>
+﻿@model IEnumerable<VMANpizza.Models.Order>
 
 @{
     ViewData["Title"] = "Index";
@@ -13,16 +13,13 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.PizzaType)
+                @Html.DisplayNameFor(model => model.OrderDate)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.QtyS)
+                @Html.DisplayNameFor(model => model.totalPrice)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.QtyM)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.QtyL)
+                @Html.DisplayNameFor(model => model.Customer)
             </th>
             <th></th>
         </tr>
@@ -31,16 +28,13 @@
 @foreach (var item in Model) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.PizzaType)
+                @Html.DisplayFor(modelItem => item.OrderDate)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.QtyS)
+                @Html.DisplayFor(modelItem => item.totalPrice)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.QtyM)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.QtyL)
+                @Html.DisplayFor(modelItem => item.Customer.Id)
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
