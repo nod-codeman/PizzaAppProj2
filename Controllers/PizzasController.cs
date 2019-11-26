@@ -55,12 +55,29 @@ namespace VMANpizza.Controllers
                 return NotFound();
             }
 
-            var pizza = await _context.Pizzas
-                .FirstOrDefaultAsync(m => m.Id == id);
-            if (pizza == null)
+            var pizza = new Pizza();
+            try
             {
-                return NotFound();
+                var client = new HttpClient();
+                var getDataTask = client.GetAsync($"http://localhost:51105/api/pizza/{id}")
+                    .ContinueWith(response =>
+                    {
+
+                        var result = response.Result;
+                        if (result.StatusCode == System.Net.HttpStatusCode.OK)
+                        {
+                            var readResult = result.Content.ReadAsAsync<Pizza>();
+                            readResult.Wait();
+                            pizza = readResult.Result;
+                        }
+                    });
+                getDataTask.Wait();
             }
+            catch (Exception exc)
+            {
+                throw exc;
+            }
+
 
             return View(pizza);
         }
