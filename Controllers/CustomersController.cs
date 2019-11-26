@@ -63,9 +63,8 @@ namespace VMANpizza.Controllers
         [HttpGet]
         public IActionResult CreateCustomer()
         {
-            Customer c = new Customer();
-            c.Email = "default@email.test";
-            return View(c);
+            
+            return View();
         }
 
         //// POST: Customers/Create
