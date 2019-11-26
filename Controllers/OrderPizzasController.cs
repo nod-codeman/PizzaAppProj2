@@ -1,6 +1,7 @@
 ﻿ using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -23,7 +24,8 @@ namespace VMANpizza.Controllers
         // GET: OrderPizzas
         public async Task<IActionResult> Index()
         {
-            return View(await _context.OrderPizza.ToListAsync());
+          
+                return View(await _context.OrderPizza.ToListAsync());
         }
 
         // GET: OrderPizzas/Details/5

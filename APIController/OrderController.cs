@@ -1,4 +1,5 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -31,7 +32,7 @@ namespace VMANpizza.APIController
             {
                 return orders;
             }
-            //return await _context.Orders.ToListAsync();
+            
 
             return orders;
         }

@@ -12,5 +12,7 @@ namespace VMANpizza.Models
         public DateTime OrderDate { get; set; }
         public double totalPrice { get; set; }
         public List<Pizza> Pizzas { get; set; }
+
+        public Customer Customer { get; set; }
     }
 }

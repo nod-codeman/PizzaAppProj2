@@ -1,10 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
+using System.Net.Http.Headers;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
+using Newtonsoft.Json;
 using VMANpizza.Models;
 using VMANpizza.Models.ViewModel;
 
@@ -19,6 +22,30 @@ namespace VMANpizza.Controllers
             _context = context;
         }
 
+        public async Task<ActionResult<IList<OrderPizza>>> Get()
+        {
+            List<OrderPizza> orders = new List<OrderPizza>();
+
+            using (var client = new HttpClient())
+            {
+                client.BaseAddress = new Uri("http://localhost:51105/api/order");
+                client.DefaultRequestHeaders.Clear();
+                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+
+                HttpResponseMessage res = await  client.GetAsync("api/orders");
+
+                if (res.IsSuccessStatusCode)
+                {
+                    var OrdResponse = res.Content.ReadAsStringAsync().Result;
+                    orders = JsonConvert.DeserializeObject<List<OrderPizza>>(OrdResponse);
+                  
+                }
+
+                
+            }
+
+            return View(orders);
+        }
        
 
         // POST: OrderPizzas1/Create
