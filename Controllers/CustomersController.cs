@@ -1,10 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
+using System.Text;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
+using Newtonsoft.Json;
 using VMANpizza.Models;
 using VMANpizza.Models.ViewModel;
 using VMANpizza.Repositories;
@@ -14,6 +17,7 @@ namespace VMANpizza.Controllers
     public class CustomersController : Controller
     {
         private readonly CustomerAPIController _apiController;
+        private string getUrl = "http://localhost:51105/";
 
         public CustomersController(CustomerAPIController apiController)
         {
@@ -68,17 +72,53 @@ namespace VMANpizza.Controllers
 
         //// POST: Customers/Create
         //// To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        //// more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+        ////// more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+        //[HttpPost]
+        //[ValidateAntiForgeryToken]
+        //public async Task<IActionResult> CreateCustomer([Bind("ID,FirstName,LastName,Email")] Customer customer)
+        //{
+        //    if (ModelState.IsValid)
+        //    {
+        //        if (!_apiController.CustomerExits(customer))
+        //        {
+        //            //the controller calls the API create method.
+        //            _apiController.CreateCustomer(customer);
+        //            return RedirectToAction("CreateOrderPizza", "OrderPizzas1");
+        //        }
+        //        else
+        //        {
+        //            // Error. Alresdy exists.
+        //            ModelState.AddModelError(string.Empty, "Customer already exists.");
+        //            return View();
+        //        }
+        //    }
+        //    return RedirectToAction("CreateOrderPizza", "OrderPizzas1");
+        //    //return View("Views/OrderPizzas1/CreateOrderPizza.cshtml");
+
+        //}
+
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> CreateCustomer([Bind("ID,FirstName,LastName,Email")] Customer customer)
         {
             if (ModelState.IsValid)
             {
-                if (!_apiController.CustomerExits(customer))
+                HttpClient client = new HttpClient();
+                client.DefaultRequestHeaders.Accept.Clear();
+                client.DefaultRequestHeaders.Accept.Add(
+                    new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
+
+                var apiUrl = "api/CustomerAPI/" + customer.Email;
+                var stringTask = client.GetStringAsync(getUrl + apiUrl);
+                var response = stringTask.Result;
+                var customerResponse = JsonConvert.DeserializeObject<Customer>(response);
+                if (customerResponse == null)
                 {
                     //the controller calls the API create method.
-                    _apiController.CreateCustomer(customer);
+                    //_apiController.CreateCustomer(customer);
+                    var customerRespone = JsonConvert.SerializeObject(response);
+                    var jsonData = new StringContent(customerRespone, Encoding.UTF8, "application/json");
+                    await client.PostAsync(getUrl + apiUrl, jsonData);
                     return RedirectToAction("CreateOrderPizza", "OrderPizzas1");
                 }
                 else
@@ -89,7 +129,13 @@ namespace VMANpizza.Controllers
                 }
             }
             return RedirectToAction("CreateOrderPizza", "OrderPizzas1");
-            //return View("Views/OrderPizzas1/CreateOrderPizza.cshtml");
+
+            //if (response.StatusCode == System.Net.HttpStatusCode.OK)
+            //{
+
+            //}
+            //return response(customer);
+
 
         }
 

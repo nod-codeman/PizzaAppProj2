@@ -34,9 +34,9 @@ namespace VMANpizza.Controllers
 
         // POST: api/CustomerAPI/5
         //[HttpPost("{email}")]
-        //public async Task<Customer> Get(string email)
+        //public async Task<Customer> Create(string email)
         //{
-        //    return (await _repo.GetCustomer(email));
+        //    return (await _repo.CreateCustomer(email));
         //}
 
         //[HttpGet("{id}", Name = "Get")]
@@ -51,11 +51,6 @@ namespace VMANpizza.Controllers
         [HttpPost]
         public async void CreateCustomer([FromBody] Customer customer)
         {
-            //if customer does not exist, then create a new customer
-            //if (!(_repo.CustomerExits(customer.Email)))
-            //{
-            //    await _repo.CreateCustomer(customer);
-            //}
             await _repo.CreateCustomer(customer);
         }
 
@@ -63,7 +58,6 @@ namespace VMANpizza.Controllers
         public bool CustomerExits([FromBody] Customer customer)
         {
             //if customer does not exist, then create a new customer
-
             return (_repo.CustomerExits(customer.Email));
 
         }
