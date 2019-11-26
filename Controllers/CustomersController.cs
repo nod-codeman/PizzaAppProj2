@@ -116,7 +116,7 @@ namespace VMANpizza.Controllers
                 {
                     //the controller calls the API create method.
                     //_apiController.CreateCustomer(customer);
-                    var customerRespone = JsonConvert.SerializeObject(response);
+                    var customerRespone = JsonConvert.SerializeObject(customer);
                     var jsonData = new StringContent(customerRespone, Encoding.UTF8, "application/json");
                     await client.PostAsync(getUrl + apiUrl, jsonData);
                     return RedirectToAction("CreateOrderPizza", "OrderPizzas1");
