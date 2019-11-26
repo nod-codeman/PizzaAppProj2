@@ -179,7 +179,7 @@ namespace VMANpizza.Controllers
                 }
 
                 await _context.SaveChangesAsync();
-                return View("Views/Home/Index.cshtml");
+                return RedirectToAction("Index", "Orders");
             }
             return View("Views/Home/Index.cshtml");
         }
