@@ -16,6 +16,7 @@ namespace VMANpizza.Models
         public DateTime OrderDate { get; set; }
 
         [Display(Name = "Total Pricce")]
+        [DataType(DataType.Currency)]
         public double totalPrice { get; set; }
         //public int CartId { get; set; }
         public List<Pizza> Pizzas { get; set; }
