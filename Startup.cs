@@ -28,8 +28,18 @@ namespace VMANpizza
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<AppDbContext>(options =>
+<<<<<<< HEAD
                 options.UseSqlServer(Configuration.GetConnectionString("AppDbContext")));
             //options.UseSqlServer("Server=tcp:tserving.database.windows.net,1433;Initial Catalog = Vlive; Persist Security Info=False;User ID = DBanger; Password=sdktesting@2;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout = 30;"));
+=======
+
+            //options.UseSqlServer(Configuration.GetConnectionString("AppDbContext")));
+           // options.UseSqlServer("Server=tcp:tserving.database.windows.net,1433;Initial Catalog = Vlive; Persist Security Info=False;User ID = DBanger; Password=sdktesting@2;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout = 30;"));
+
+                options.UseSqlServer(Configuration.GetConnectionString("AppDbContext")));
+            //options.UseSqlServer("Server=tcp:tserving.database.windows.net,1433;Initial Catalog = Vlive; Persist Security Info=False;User ID = DBanger; Password=sdktesting@2;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout = 30;"));
+
+>>>>>>> developerBranch
             services.AddControllersWithViews();
             services.AddTransient<CustomerRepos>();
             services.AddTransient<CustomerAPIController>();
@@ -39,7 +49,11 @@ namespace VMANpizza
             {
                 options.AddPolicy("CorsPolicy",
                     builder =>
+<<<<<<< HEAD
                     builder.WithOrigins("http://localhost:51105", "http://localhost:4200")
+=======
+                    builder.WithOrigins("http://localhost:51105" , "http://localhost:4200")
+>>>>>>> developerBranch
                     .AllowAnyMethod()
                     .AllowAnyHeader()
                     .AllowCredentials());

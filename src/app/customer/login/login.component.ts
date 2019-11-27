@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
+<<<<<<< HEAD
 
   
    
@@ -14,6 +15,12 @@ export class LoginComponent implements OnInit {
         public  Email : string
    
 
+=======
+   
+  public  Id : number 
+  public  FirstName : string
+  public  Email : string
+>>>>>>> developerBranch
 
   constructor() { }
 

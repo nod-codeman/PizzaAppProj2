@@ -49,24 +49,16 @@ namespace VMANpizza.Controllers
 
         // POST: api/CustomerAPI
         [HttpPost]
-        public async Task<IActionResult> CreateCustomer([FromBody] Customer customer)
+
+        public async void CreateCustomer([FromBody] Customer customer)
         {
-           
-            if (!(_repo.CustomerExits(customer.Email))){
-            
+            //if customer does not exist, then create a new customer
+            //if (!(_repo.CustomerExits(customer.Email)))
+            //{
+            //    await _repo.CreateCustomer(customer);
+            //}
             await _repo.CreateCustomer(customer);
 
-            /*
-            _context.Add(customer);
-            await _context.SaveChangesAsync();
-            */
-
-            return RedirectToAction("CreateOrderPizza", "OrderPizzas1");
-            }
-
-            return BadRequest();
-
-        
         }
 
         [HttpPost]

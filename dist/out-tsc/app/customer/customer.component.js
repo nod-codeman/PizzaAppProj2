@@ -1,4 +1,5 @@
 import { __decorate } from "tslib";
+<<<<<<< HEAD
 import { Component } from '@angular/core';
 import { Pizza } from '../pizza';
 let CustomerComponent = class CustomerComponent {
@@ -33,6 +34,22 @@ let CustomerComponent = class CustomerComponent {
         }));
     }
 };
+=======
+import { Component, Input } from '@angular/core';
+let CustomerComponent = class CustomerComponent {
+    constructor() {
+        this.pizzaImageUrl = 'dist/assets/garden-veggie-pizza.ico';
+    }
+    ngOnInit() {
+    }
+};
+__decorate([
+    Input()
+], CustomerComponent.prototype, "pizza", void 0);
+__decorate([
+    Input()
+], CustomerComponent.prototype, "pizzaImageUrl", void 0);
+>>>>>>> developerBranch
 CustomerComponent = __decorate([
     Component({
         selector: 'app-customer',

@@ -16,11 +16,20 @@ namespace VMANpizza.Models
         }
 
         protected override void OnConfiguring(DbContextOptionsBuilder options) =>
+<<<<<<< HEAD
 
             options.UseSqlServer(@"data source=.\SQLEXPRESS;Initial Catalog=VmanPizzaDB;Integrated Security=true;MultipleActiveResultSets=True;");
             
         //options.UseSqlServer("Server=tcp:tserving.database.windows.net,1433;Initial Catalog = Vlive; Persist Security Info=False;User ID = DBanger; Password=sdktesting@2;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout = 30;");
 
+=======
+
+            options.UseSqlServer(@"data source=.\SQLEXPRESS;Initial Catalog=VmanPizzaDB;Integrated Security=true;MultipleActiveResultSets=True;");
+
+          
+        //options.UseSqlServer("Server=tcp:tserving.database.windows.net,1433;Initial Catalog=Vlive_prod;Persist Security Info=False;User ID=DBanger;Password=sdktesting@2;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;");
+
+>>>>>>> developerBranch
 
         public DbSet<Pizza> Pizzas { get; set; }
        

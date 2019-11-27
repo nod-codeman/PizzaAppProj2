@@ -1,0 +1,73 @@
+﻿@model VMANpizza.Models.Order
+
+@{
+    ViewData["Title"] = "Order";
+}
+
+<h1>Order Details</h1>
+
+<div>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Id)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Id)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.OrderDate)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.OrderDate)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.totalPrice)
+        </dt>
+        <dd class="col-sm-10 font-weight-bold" >
+            @Html.DisplayFor(model => model.totalPrice)
+        </dd>
+    </dl>
+</div>
+
+<table class="table">
+    <thead>
+    <th>
+        Pizza Type
+    </th>
+    <th>
+        Quantity Small
+    </th>
+    <th>
+        Quantity Medium
+    </th>
+    <th>
+        Quantity Large
+    </th>
+   
+
+    </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Pizzas)
+        {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.PizzaType)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.QtyS)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.QtyM)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.QtyL)
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>

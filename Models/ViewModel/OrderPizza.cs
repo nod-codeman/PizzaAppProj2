@@ -71,6 +71,7 @@ namespace VMANpizza.Models.ViewModel
         public string pizzaTypeChk { get; set; }
         #endregion
         public int customerId { get; set; }
+        public string customerEmail { get; set; }
         public int orderId { get; set; }
         //public int cartId { get; set; }
         [DataType(DataType.Date)]

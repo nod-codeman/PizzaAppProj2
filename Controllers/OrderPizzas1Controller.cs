@@ -5,6 +5,9 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
+
+using Newtonsoft.Json;
+
 using VMANpizza.Models;
 using VMANpizza.Models.ViewModel;
 
@@ -19,6 +22,34 @@ namespace VMANpizza.Controllers
             _context = context;
         }
 
+
+        /*public async Task<ActionResult<IList<OrderPizza>>> Get()
+        {
+            List<OrderPizza> orders = new List<OrderPizza>();
+
+            using (var client = new HttpClient())
+            {
+                client.BaseAddress = new Uri("http://localhost:51105/api/order");
+                client.DefaultRequestHeaders.Clear();
+                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+
+                HttpResponseMessage res = await  client.GetAsync("api/orders");
+
+                if (res.IsSuccessStatusCode)
+                {
+                    var OrdResponse = res.Content.ReadAsStringAsync().Result;
+                    orders = JsonConvert.DeserializeObject<List<OrderPizza>>(OrdResponse);
+                  
+                }
+
+                
+            }
+
+            return View(orders);
+        }*/
+       
+
+
         // GET: Orders
         public async Task<IActionResult> Index()
         {
@@ -30,7 +61,9 @@ namespace VMANpizza.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,QtySbac,QtyMbac,QtyLbac,QtySsal,QtyMsal,QtyLsal,QtySpep,QtyMpep,QtyLpep,QtySmus,QtyMmus,QtyLmus,QtySche,QtyMche,QtyLche,QtySchk,QtyMchk,QtyLchk,PriceSbac,PriceMbac,PriceLbac,PriceSsal,PriceMsal,PriceLsal,PriceSpep,PriceMpep,PriceLpep,PriceSmus,PriceMmus,PriceLmus,PriceSche,PriceMche,PriceLche,PriceSchk,PriceMchk,PriceLchk,pizzaTypeBac,pizzaTypeSal,pizzaTypePep,pizzaTypeMus,pizzaTypeChe,pizzaTypeChk,customerId,orderId,OrderDate,totalPrice")] OrderPizza orderPizza)
+
+        public async Task<IActionResult> Create([Bind("Id,QtySbac,QtyMbac,QtyLbac,QtySsal,QtyMsal,QtyLsal,QtySpep,QtyMpep,QtyLpep,QtySmus,QtyMmus,QtyLmus,QtySche,QtyMche,QtyLche,QtySchk,QtyMchk,QtyLchk,PriceSbac,PriceMbac,PriceLbac,PriceSsal,PriceMsal,PriceLsal,PriceSpep,PriceMpep,PriceLpep,PriceSmus,PriceMmus,PriceLmus,PriceSche,PriceMche,PriceLche,PriceSchk,PriceMchk,PriceLchk,pizzaTypeBac,pizzaTypeSal,pizzaTypePep,pizzaTypeMus,pizzaTypeChe,pizzaTypeChk,customerId,customerEmail,orderId,OrderDate,totalPrice")] OrderPizza orderPizza)
+
         {
             orderPizza.pizzaTypeBac = "Bacon";
             orderPizza.pizzaTypePep = "Pepperoni";
@@ -153,130 +186,11 @@ namespace VMANpizza.Controllers
             return View("Views/Home/Index.cshtml");
         }
 
-        //[HttpPost]
-        //[ValidateAntiForgeryToken]
-        //public async Task<IActionResult> Create1([Bind("Id,QtySbac,QtyMbac,QtyLbac,QtySsal,QtyMsal,QtyLsal,QtySpep,QtyMpep,QtyLpep,QtySmus,QtyMmus,QtyLmus,QtySche,QtyMche,QtyLche,QtySchk,QtyMchk,QtyLchk,PriceSbac,PriceMbac,PriceLbac,PriceSsal,PriceMsal,PriceLsal,PriceSpep,PriceMpep,PriceLpep,PriceSmus,PriceMmus,PriceLmus,PriceSche,PriceMche,PriceLche,PriceSchk,PriceMchk,PriceLchk,pizzaTypeBac,pizzaTypeSal,pizzaTypePep,pizzaTypeMus,pizzaTypeChe,pizzaTypeChk,customerId,orderId,OrderDate,totalPrice")] OrderPizza orderPizza)
-        //{
-        //    orderPizza.pizzaTypeBac = "Bacon";
-        //    orderPizza.pizzaTypePep = "Pepperoni";
-        //    orderPizza.pizzaTypeSal = "Salami";
-        //    orderPizza.pizzaTypeChe = "Cheese";
-        //    orderPizza.pizzaTypeChk = "Chicken";
-        //    orderPizza.pizzaTypeMus = "Mushroom";
 
-        //    var CustId = await _context.Customers.ToListAsync();
-        //    int currCustId;
-        //    if (CustId.Count != 0)
-        //    {
-        //        currCustId = CustId.Max(o => o.Id);
-        //    }
-        //    else
-        //    { currCustId = 1; }
-        //    orderPizza.customerId = currCustId;
 
-        //    var OrderId = await _context.Orders.ToListAsync();
-        //    int currOrderId;
-        //    if (OrderId.Count != 0)
-        //    {
-        //        currOrderId = OrderId.Max(o => o.Id) + 1;
-        //    }
-        //    else
-        //    { currOrderId = 1; }
-        //    if (ModelState.IsValid)
-        //    {
-        //        Order order = new Order()
-        //        {
-        //            totalPrice = orderPizza.totalPrice,
-        //            OrderDate = orderPizza.OrderDate,
-        //            CustomerId = currCustId
-        //        };
-        //        _context.Add(order);
-        //        if (orderPizza.QtySbac != 0 || orderPizza.QtyMbac != 0 || orderPizza.QtyLbac != 0)
-        //        {
-        //            Pizza bacPizza = new Pizza()
-        //            {
-        //                PizzaType = orderPizza.pizzaTypeBac,
-        //                QtyS = orderPizza.QtySbac,
-        //                QtyM = orderPizza.QtyMbac,
-        //                QtyL = orderPizza.QtyLbac,
-        //                OrderId = currOrderId
-        //            };
-        //            _context.Add(bacPizza);
-        //            //await _context.SaveChangesAsync();
-        //        }
-        //        if (orderPizza.QtySsal != 0 || orderPizza.QtyMsal != 0 || orderPizza.QtyLsal != 0)
-        //        {
-        //            Pizza salPizza = new Pizza()
-        //            {
-        //                PizzaType = orderPizza.pizzaTypeSal,
-        //                QtyS = orderPizza.QtySsal,
-        //                QtyM = orderPizza.QtyMsal,
-        //                QtyL = orderPizza.QtyLsal,
-        //                OrderId = currOrderId
-        //            };
-        //            _context.Add(salPizza);
-        //            //await _context.SaveChangesAsync();
-        //        }
-        //        if (orderPizza.QtySpep != 0 || orderPizza.QtyMpep != 0 || orderPizza.QtyLpep != 0)
-        //        {
-        //            Pizza pepPizza = new Pizza()
-        //            {
-        //                PizzaType = orderPizza.pizzaTypePep,
-        //                QtyS = orderPizza.QtySpep,
-        //                QtyM = orderPizza.QtyMpep,
-        //                QtyL = orderPizza.QtyLpep,
-        //                OrderId = currOrderId
-        //            };
-        //            _context.Add(pepPizza);
-        //            //await _context.SaveChangesAsync();
-        //        }
-        //        if (orderPizza.QtySmus != 0 || orderPizza.QtyMmus != 0 || orderPizza.QtyLmus != 0)
-        //        {
-        //            Pizza musPizza = new Pizza()
-        //            {
-        //                PizzaType = orderPizza.pizzaTypeMus,
-        //                QtyS = orderPizza.QtySmus,
-        //                QtyM = orderPizza.QtyMmus,
-        //                QtyL = orderPizza.QtyLmus,
-        //                OrderId = currOrderId
-        //            };
-        //            _context.Add(musPizza);
-        //            //await _context.SaveChangesAsync();
-        //        }
-        //        if (orderPizza.QtySche != 0 || orderPizza.QtyMche != 0 || orderPizza.QtyLche != 0)
-        //        {
-        //            Pizza chePizza = new Pizza()
-        //            {
-        //                PizzaType = orderPizza.pizzaTypeChe,
-        //                QtyS = orderPizza.QtySche,
-        //                QtyM = orderPizza.QtyMche,
-        //                QtyL = orderPizza.QtyLche,
-        //                OrderId = currOrderId
-        //            };
-        //            _context.Add(chePizza);
-        //            //await _context.SaveChangesAsync();
-        //        }
-        //        if (orderPizza.QtySchk != 0 || orderPizza.QtyMchk != 0 || orderPizza.QtyLchk != 0)
-        //        {
-        //            Pizza chkPizza = new Pizza()
-        //            {
-        //                PizzaType = orderPizza.pizzaTypeBac,
-        //                QtyS = orderPizza.QtySchk,
-        //                QtyM = orderPizza.QtyMchk,
-        //                QtyL = orderPizza.QtyLchk,
-        //                OrderId = currOrderId
-        //            };
-        //            _context.Add(chkPizza);
-        //            //await _context.SaveChangesAsync();
-        //        }
-
-        //        await _context.SaveChangesAsync();
-        //        return View("Views/Home/Index.cshtml");
-        //    }
-        //    return View("Views/Home/Index.cshtml");
-        //}
         // GET: OrderPizzaCustomers1/CreateOrderPizza
-        public IActionResult CreateOrderPizza()
+        public IActionResult CreateOrderPizza(string Email)
+
         {
             OrderPizza OrderPizzasList = new OrderPizza
             {
@@ -309,8 +223,8 @@ namespace VMANpizza.Controllers
                 PriceSchk = 10,
                 PriceMchk = 12,
                 PriceLchk = 16,
-                OrderDate = DateTime.Now
-
+                OrderDate = DateTime.Now,
+                customerEmail = Email
             };
             return View(OrderPizzasList);
         }
@@ -321,7 +235,8 @@ namespace VMANpizza.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> CreateOrderPizza([Bind("Id,QtySbac,QtyMbac,QtyLbac,QtySsal,QtyMsal,QtyLsal,QtySpep,QtyMpep,QtyLpep,QtySmus,QtyMmus,QtyLmus,QtySche,QtyMche,QtyLche,QtySchk,QtyMchk,QtyLchk,PriceSbac,PriceMbac,PriceLbac,PriceSsal,PriceMsal,PriceLsal,PriceSpep,PriceMpep,PriceLpep,PriceSmus,PriceMmus,PriceLmus,PriceSche,PriceMche,PriceLche,PriceSchk,PriceMchk,PriceLchk,pizzaTypeBac,pizzaTypeSal,pizzaTypePep,pizzaTypeMus,pizzaTypeChe,pizzaTypeChk,customerId,orderId,OrderDate,totalPrice")] OrderPizza orderPizza)
+        public async Task<IActionResult> CreateOrderPizza([Bind("Id,QtySbac,QtyMbac,QtyLbac,QtySsal,QtyMsal,QtyLsal,QtySpep,QtyMpep,QtyLpep,QtySmus,QtyMmus,QtyLmus,QtySche,QtyMche,QtyLche,QtySchk,QtyMchk,QtyLchk,PriceSbac,PriceMbac,PriceLbac,PriceSsal,PriceMsal,PriceLsal,PriceSpep,PriceMpep,PriceLpep,PriceSmus,PriceMmus,PriceLmus,PriceSche,PriceMche,PriceLche,PriceSchk,PriceMchk,PriceLchk,pizzaTypeBac,pizzaTypeSal,pizzaTypePep,pizzaTypeMus,pizzaTypeChe,pizzaTypeChk,customerId,customerEmail,orderId,OrderDate,totalPrice")] OrderPizza orderPizza)
+
         {
             orderPizza.OrderDate = DateTime.Now;
             #region Set the total price
@@ -353,7 +268,9 @@ namespace VMANpizza.Controllers
             }
             else
             { currCustId = 1; }
-            orderPizza.customerId = Convert.ToInt32(currCustId) ;
+
+            //orderPizza.customerId = Convert.ToInt32(currCustId) ;
+
             return View("Views/OrderPizzas1/Create.cshtml", orderPizza);
         }
     }

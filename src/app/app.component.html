@@ -22,7 +22,11 @@
                             <a class="nav-link text-dark" (click)="Title='Customer'" routerLink="">Login</a>
                         </li>
                         <li class="nav-item">
+<<<<<<< HEAD
                             <a class="nav-link text-dark" (click)="Title='Guest'">Order</a>
+=======
+                            <a class="nav-link text-dark" (click)="Title='Order'"routerLink="" >Order</a>
+>>>>>>> developerBranch
                         </li>
                     </ul>
                 </div>
@@ -38,11 +42,20 @@
     
     <div [ngSwitch]="Title">
         <app-login  *ngSwitchCase="'Customer'"></app-login>
+<<<<<<< HEAD
         <app-customer  *ngSwitchCase="'Pizza'></app-customer>
         <div *ngSwitchDefault class="text-center">
 
                 <div class="jumbotron" style="background-color:aliceblue">
                     <h1>Welcome to VMAN Pizza</h1>
+=======
+        <app-customer  *ngSwitchCase="'Pizza'"></app-customer>
+        <app-order  *ngSwitchCase="'Order'"></app-order>
+        <div *ngSwitchDefault class="text-center">
+
+                <div class="jumbotron" style="background-color:aliceblue">
+                    <h1 id="Locator">Welcome to VMAN Pizza</h1>
+>>>>>>> developerBranch
                     <p>Home to the best pizza ever made by men.</p>
                     <a class="btn btn-outline-warning" asp-area="" asp-controller="Customers" asp-action="CreateCustomer">Register</a>
                     <a class="btn btn-outline-warning" asp-area="" asp-controller="OrderPizzas1" asp-action="CreateOrderPizza">Continue as a guest</a>
@@ -91,4 +104,8 @@
     <script src="/js/site.js?v=4q1jwFhaPaZgr8WAUSrux6hAuh0XDg9kPS3xIVq36I0"></script>
 
 
+<<<<<<< HEAD
 <router-outlet></router-outlet>
+=======
+<router-outlet></router-outlet>
+>>>>>>> developerBranch

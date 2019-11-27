@@ -5,6 +5,10 @@ import { CustomerComponent } from './customer/customer.component';
 import { LoginComponent } from './customer/login/login.component';
 import {HttpClientModule} from '@angular/common/http';
 import {FormsModule} from '@angular/forms';
+<<<<<<< HEAD
+=======
+import { OrderComponent } from './order/order.component';
+>>>>>>> developerBranch
 
 
 describe('AppComponent', () => {
@@ -18,7 +22,12 @@ describe('AppComponent', () => {
       declarations: [
         AppComponent,
         CustomerComponent,
+<<<<<<< HEAD
         LoginComponent
+=======
+        LoginComponent,
+        OrderComponent
+>>>>>>> developerBranch
         
       ],
     }).compileComponents();
@@ -42,4 +51,8 @@ describe('AppComponent', () => {
   
  
 
+<<<<<<< HEAD
 });
+=======
+});
+>>>>>>> developerBranch

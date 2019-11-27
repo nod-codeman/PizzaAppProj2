@@ -4,6 +4,11 @@ import { NgModel } from '@angular/forms';
 
 
 
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> developerBranch
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
