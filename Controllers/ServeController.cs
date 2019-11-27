@@ -42,7 +42,13 @@ namespace VMANpizza.Controllers
     [HttpGet]
         public async Task<ActionResult<IEnumerable<Pizza>>> GetPizzas()
         {
-            return await _context.Pizzas.ToListAsync();
+          
+
+            var pizzas = await _context.Pizzas.ToListAsync();
+
+
+
+            return RedirectToRoute("http://localhost:4200/",)
         }
 
         // GET: api/Serve/5
