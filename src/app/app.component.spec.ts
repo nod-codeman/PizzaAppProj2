@@ -2,7 +2,10 @@ import { TestBed, async } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
 import { CustomerComponent } from './customer/customer.component';
+import { LoginComponent } from './customer/login/login.component';
 import {HttpClientModule} from '@angular/common/http';
+import {FormsModule} from '@angular/forms';
+import { OrderComponent } from './order/order.component';
 
 
 describe('AppComponent', () => {
@@ -11,10 +14,13 @@ describe('AppComponent', () => {
       imports: [
         RouterTestingModule,
         HttpClientModule,
+        FormsModule
       ],
       declarations: [
         AppComponent,
-        CustomerComponent
+        CustomerComponent,
+        LoginComponent,
+        OrderComponent
         
       ],
     }).compileComponents();

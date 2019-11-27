@@ -11,7 +11,7 @@ let AppComponent = class AppComponent {
         this.Title = 'Customer';
     }
     Pizzasgetter() {
-        this.PizzaService.getPizzas().subscribe(d => d.data.forEach((item) => {
+        this.PizzaService.getPizzas(new Pizza).subscribe(d => d.data.forEach((item) => {
             var p1 = new Pizza();
             p1.Id = item.Id;
             p1.OrderId = item.OrderId;

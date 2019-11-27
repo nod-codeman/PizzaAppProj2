@@ -1,6 +1,7 @@
-import { Component, OnInit, Input} from '@angular/core';
+import { Component, OnInit} from '@angular/core';
+import { PizzaService } from '../data.servpizza';
+import { Pizza } from '../pizza';
 
-import { Pizza} from '../pizza'
 
 
 
@@ -14,21 +15,33 @@ import { Pizza} from '../pizza'
 
 
 export class CustomerComponent implements OnInit{
+ 
+  Runit = this.Pizzasgetter();
+  
+  pizzas: Pizza[] = [];
 
-  @Input() pizza: Pizza
-  @Input() pizzaImageUrl = 'dist/assets/garden-veggie-pizza.ico';
+  pizzaImageUrl = 'dist/assets/garden-veggie-pizza.ico';
 
-  constructor(){
-   
+ 
+
+  constructor(private PizzaService: PizzaService){
+
+  
+
+  }
+ngOnInit(){
+  
+    
+    
+
+}
+  public Pizzasgetter(){
+    
+    this.PizzaService.getPizzas(this.pizzas).subscribe(d =>
+      this.pizzas = d.data)
       
+  
   }
-
-  ngOnInit(){
-
-  }
-
   
 }
-
-  
 

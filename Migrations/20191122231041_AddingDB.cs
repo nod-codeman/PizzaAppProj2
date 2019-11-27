@@ -3,11 +3,8 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace VMANpizza.Migrations
 {
-<<<<<<< HEAD:Migrations/20191124132608_vmantest.cs
+
     public partial class vmantest : Migration
-=======
-    public partial class AddingDB : Migration
->>>>>>> b4f03a3a3758c165ce8f4c9d07c1212b682695a1:Migrations/20191122231041_AddingDB.cs
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

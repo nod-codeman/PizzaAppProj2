@@ -7,12 +7,13 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 exports.__esModule = true;
 var core_1 = require("@angular/core");
+var http_1 = require("@angular/common/http");
 var PizzaService = /** @class */ (function () {
     function PizzaService(http) {
         this.http = http;
     }
-    PizzaService.prototype.getPizzas = function () {
-        return this.http.get("http://localhost:51105/api/Serve");
+    PizzaService.prototype.getPizzas = function (pizzas) {
+        return this.http.get("http://localhost:51105/api/Serve", { headers: new http_1.HttpHeaders({ 'Accept': 'application/json', 'Content-Type': 'application/json' }) });
     };
     PizzaService = __decorate([
         core_1.Injectable({

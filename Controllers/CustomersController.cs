@@ -20,7 +20,7 @@ namespace VMANpizza.Controllers
             //_context = context;
             _apiController = apiController;
         }
-
+        /*
         // GET: Customers
         //public async Task<IActionResult> Index()
         //{
@@ -103,8 +103,7 @@ namespace VMANpizza.Controllers
 
             if (ModelState.IsValid)
             {
-                try
-                {
+             
                     _context.Update(customer);
                     await _context.SaveChangesAsync();
                     //the controller calls the API create method.
@@ -237,5 +236,7 @@ namespace VMANpizza.Controllers
         //{
         //    return _context.Customers.Any(e => e.Id == id);
         //}
+    }
+    */
     }
 }

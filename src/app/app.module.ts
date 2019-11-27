@@ -9,6 +9,10 @@ import {HttpClientModule} from '@angular/common/http';
 import {PizzaService} from './data.servpizza';
 
 import {Pizza} from './pizza';
+import {LoginComponent } from './customer/login/login.component';
+
+import {FormsModule} from '@angular/forms';
+import { OrderComponent } from './order/order.component';
 
 
 
@@ -18,17 +22,21 @@ import {Pizza} from './pizza';
 @NgModule({
   declarations: [
     AppComponent,
-    CustomerComponent
+    CustomerComponent,
+    LoginComponent,
+    OrderComponent
   
     
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
     
   ],
   providers: [PizzaService, Pizza],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+

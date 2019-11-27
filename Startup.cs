@@ -44,7 +44,7 @@ namespace VMANpizza
             {
                 options.AddPolicy("CorsPolicy",
                     builder =>
-                    builder.WithOrigins("http://localhost:51105")
+                    builder.WithOrigins("http://localhost:51105" , "http://localhost:4200")
                     .AllowAnyMethod()
                     .AllowAnyHeader()
                     .AllowCredentials());
