@@ -4,7 +4,7 @@
     ViewData["Title"] = "Order";
 }
 
-<h1>Order Details</h1>
+<h1 class="text-info">Order Details</h1>
 
 <div>
     <hr />
@@ -30,8 +30,8 @@
     </dl>
 </div>
 
-<table class="table">
-    <thead>
+<table class="table table-hover">
+    <thead class="table-dark">
     <th>
         Pizza Type
     </th>
@@ -69,5 +69,5 @@
     </tbody>
 </table>
 <div>
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Index" class="btn btn-outline-danger">Back to List</a>
 </div>
