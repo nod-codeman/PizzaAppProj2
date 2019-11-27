@@ -27,7 +27,7 @@ namespace VMANpizza.BL
             double.TryParse(newOrder["QtyLbac"], out blq);
             bacon.QtyL = blq;
 
-            Repository.Restore(bacon);
+            //Repository.Restore(bacon);
 
             Pizza salami = new Pizza();
             salami.PizzaType = "Salami";
@@ -44,7 +44,7 @@ namespace VMANpizza.BL
             double.TryParse(newOrder["QtyLsal"], out slq);
             salami.QtyL = slq;
 
-            Repository.Restore(salami);
+            //Repository.Restore(salami);
 
             Pizza pepperoni = new Pizza();
             pepperoni.PizzaType = "Pepperoni";
@@ -61,7 +61,7 @@ namespace VMANpizza.BL
             double.TryParse(newOrder["QtyLpep"], out plq);
             pepperoni.QtyL = plq;
 
-            Repository.Restore(pepperoni);
+            //Repository.Restore(pepperoni);
 
             Pizza mushroom = new Pizza();
             mushroom.PizzaType = "Mushroom";
@@ -78,7 +78,7 @@ namespace VMANpizza.BL
             double.TryParse(newOrder["QtyLmus"], out mlq);
             mushroom.QtyL = mlq;
 
-            Repository.Restore(mushroom);
+            //Repository.Restore(mushroom);
 
             Pizza cheese = new Pizza();
             cheese.PizzaType = "Cheese";
@@ -95,7 +95,7 @@ namespace VMANpizza.BL
             double.TryParse(newOrder["QtyLche"], out clq);
             cheese.QtyL = clq;
 
-            Repository.Restore(cheese);
+            //Repository.Restore(cheese);
 
             Pizza chicken = new Pizza();
             chicken.PizzaType = "Chicken";
@@ -112,7 +112,7 @@ namespace VMANpizza.BL
             double.TryParse(newOrder["QtyLchk"], out chlq);
             chicken.QtyL = chlq;
 
-            Repository.Restore(chicken);
+            //Repository.Restore(chicken);
 
         }
     }
