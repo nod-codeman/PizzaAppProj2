@@ -25,6 +25,7 @@ namespace VMANpizza.BL
 
 
             Pizza bacon = new Pizza();
+
                 bacon.PizzaType = "Bacon";
                 //bacon.PriceS = 8;
                 //bacon.PriceM = 12;
@@ -126,6 +127,6 @@ namespace VMANpizza.BL
 
                 Repository.Restore(chicken);
                 
-            }
+            
     }
 }

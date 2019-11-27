@@ -63,6 +63,7 @@ namespace VMANpizza.Controllers
         [HttpGet]
         public IActionResult CreateCustomer()
         {
+            
             return View();
         }
 
@@ -71,26 +72,7 @@ namespace VMANpizza.Controllers
         //// more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-<<<<<<< HEAD
-       /* public async Task<IActionResult> Create([Bind("ID,FirstName,LastName,Email")] Customer customer)
-=======
-        public async Task<IActionResult> CreateCustomer([Bind("ID,FirstName,LastName,Email")] Customer customer)
->>>>>>> b4f03a3a3758c165ce8f4c9d07c1212b682695a1
-        {
-            if (ModelState.IsValid)
-            {
-                if (!_apiController.CustomerExits(customer))
-                {
-<<<<<<< HEAD
-                    _context.Add(customer);
-                    await _context.SaveChangesAsync();
-                    return RedirectToAction(nameof(Create));
-                }
-            }
-            return View();
->>>>>>> 061c83d736a9619f1d2147052a994945ace75b12
-        }
-        */
+
         // GET: Customers/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
@@ -125,12 +107,14 @@ namespace VMANpizza.Controllers
                 {
                     _context.Update(customer);
                     await _context.SaveChangesAsync();
-=======
                     //the controller calls the API create method.
                     _apiController.CreateCustomer(customer);
-                    return RedirectToAction("CreateOrderPizza", "OrderPizzas1");
->>>>>>> b4f03a3a3758c165ce8f4c9d07c1212b682695a1
-                }
+
+                    //return RedirectToAction("CreateOrderPizza", "OrderPizzas1");
+
+
+                    return RedirectToAction("CreateOrderPizza", "OrderPizzas1",  new { Email = customer.Email });
+             }
                 else
                 {
                     // Error. Alresdy exists.
