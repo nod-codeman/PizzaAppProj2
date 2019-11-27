@@ -16,9 +16,6 @@
             <th>
                 @Html.DisplayNameFor(model => model.totalPrice)
             </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Customer)
-            </th>
             <th></th>
         </tr>
     </thead>
@@ -31,9 +28,7 @@
             <td>
                 @Html.DisplayFor(modelItem => item.totalPrice)
             </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Customer.Id)
-            </td>
+        
             <td>
                 
                 <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-outline-info">Order Details</a> 
